@@ -25,7 +25,7 @@ namespace ProgrammingClass3.AngularLesson.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetProductTypes(int id) 
+        public IActionResult GetProductType(int id) 
         {
             var productType = _dbContext.ProductTypes.Find(id);
 
