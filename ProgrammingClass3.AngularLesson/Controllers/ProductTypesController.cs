@@ -5,7 +5,7 @@ using ProgrammingClass3.AngularLesson.Models;
 
 namespace ProgrammingClass3.AngularLesson.Controllers
 {
-    [Route("api/[productTypes]")]
+    [Route("api/productTypes")]
     [ApiController]
     public class ProductTypesController : ControllerBase
     {
@@ -35,6 +35,46 @@ namespace ProgrammingClass3.AngularLesson.Controllers
             }
 
             return Ok(productType);
+        }
+
+        [HttpPost]
+        public IActionResult AddProductType(ProductType productType) 
+        {
+            _dbContext.ProductTypes.Add(productType);
+            _dbContext.SaveChanges();
+
+            return Ok(productType);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult UpdateProductTypes(int id, ProductType productType)
+        {
+            if (id != productType.Id)
+            {
+                return BadRequest("ID in the request body must be equal to ID in the URL.");
+            }
+
+            _dbContext.ProductTypes.Update(productType);
+            _dbContext.SaveChanges();
+
+            return Ok(productType);
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeleteProductType(int id) 
+        {
+            var productType = _dbContext.ProductTypes.Find(id);
+
+            if (productType == null)
+            {
+                return NotFound();
+            }
+
+            _dbContext.ProductTypes.Remove(productType);
+            _dbContext.SaveChanges();
+
+            return Ok(productType);
+        
         }
 
     }
