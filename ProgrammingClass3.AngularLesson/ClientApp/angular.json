@@ -129,5 +129,8 @@
       }
     }
   },
-  "defaultProject": "ProgrammingClass3.AngularLesson"
+  "defaultProject": "ProgrammingClass3.AngularLesson",
+  "cli": {
+    "analytics": false
+  }
 }
