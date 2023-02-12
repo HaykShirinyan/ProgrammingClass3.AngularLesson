@@ -2,7 +2,7 @@
 
 namespace ProgrammingClass3.AngularLesson.Models
 {
-    public class UnitOfMeasure
+    public class ProductType
     {
         [Key]
         public int Id { get; set; }
