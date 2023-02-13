@@ -13,6 +13,5 @@ namespace ProgrammingClass3.AngularLesson.Models
 
         [StringLength(500)]
         public string Description { get; set; }
-
     }
 }

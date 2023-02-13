@@ -5,7 +5,7 @@ using ProgrammingClass3.AngularLesson.Models;
 
 namespace ProgrammingClass3.AngularLesson.Controllers
 {
-    [Route("api/productTypes")]
+    [Route("api/product-types")]
     [ApiController]
     public class ProductTypesController : ControllerBase
     {
@@ -74,8 +74,6 @@ namespace ProgrammingClass3.AngularLesson.Controllers
             _dbContext.SaveChanges();
 
             return Ok(productType);
-        
         }
-
     }
 }
