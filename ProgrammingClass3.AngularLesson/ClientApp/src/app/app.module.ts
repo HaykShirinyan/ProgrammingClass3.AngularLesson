@@ -14,6 +14,7 @@ import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
 import { AppRoutingModule } from './app-routing.module';
 import { ProductListComponent } from './products/list/product-list.component';
+import { ProductTypeListComponent } from './product-types/list/product-types-list.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ProductListComponent } from './products/list/product-list.component';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    ProductListComponent
+    ProductListComponent,
+    ProductTypeListComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
