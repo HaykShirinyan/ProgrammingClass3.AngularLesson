@@ -14,7 +14,7 @@ import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
 import { AppRoutingModule } from './app-routing.module';
 import { ProductListComponent } from './products/list/product-list.component';
-import { ProductTypeListComponent } from './product-types/list/product-types-list.component';
+import { ProductTypeListComponent } from './product-types/list/product-type-list.component';
 
 @NgModule({
   declarations: [
