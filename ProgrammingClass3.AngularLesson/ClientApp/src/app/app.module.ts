@@ -24,7 +24,7 @@ import { ProductTypeListComponent } from './product-types/list/product-types-lis
     CounterComponent,
     FetchDataComponent,
     ProductListComponent,
-    ProductTypeListComponent
+    ProductTypeListComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
