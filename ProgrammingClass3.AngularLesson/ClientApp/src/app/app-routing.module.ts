@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'counter', component: CounterComponent },
   { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
   { path: 'products', component: ProductListComponent },
-  { path: 'produc-types', component: ProductTypeListComponent }
+  { path: 'product-types', component: ProductTypeListComponent }
 ];
 
 @NgModule({
