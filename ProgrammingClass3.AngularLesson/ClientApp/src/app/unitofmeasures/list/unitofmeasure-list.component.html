@@ -1,0 +1,28 @@
+
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let unitOfMeasure of unitOfMeasures">
+        <td>
+          {{unitOfMeasure.id}}
+        </td>
+
+        <td>
+          {{unitOfMeasure.name}}
+        </td>
+
+        <td>
+          {{unitOfMeasure.description}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
