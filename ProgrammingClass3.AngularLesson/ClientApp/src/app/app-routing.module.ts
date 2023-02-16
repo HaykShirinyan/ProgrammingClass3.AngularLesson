@@ -6,6 +6,7 @@ import { FetchDataComponent } from "./fetch-data/fetch-data.component";
 import { HomeComponent } from "./home/home.component";
 import { ProductTypeListComponent } from "./product-types/list/product-type-list.component";
 import { ProductListComponent } from "./products/list/product-list.component";
+import { UnitOfMeasureListComponent } from "./unit-of-measures/list/unit-of-measure-list.component";
 
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'counter', component: CounterComponent },
   { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
   { path: 'products', component: ProductListComponent },
-  { path: 'product-types', component: ProductTypeListComponent }
+  { path: 'product-types', component: ProductTypeListComponent },
+  { path: 'unit-of-measures', component: UnitOfMeasureListComponent }
 ];
 
 @NgModule({
