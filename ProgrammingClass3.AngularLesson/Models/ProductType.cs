@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace ProgramminClass3.AngularLesson.Models
+namespace ProgrammingClass3.AngularLesson.Models
 {
     public class ProductType
     {
@@ -8,10 +8,10 @@ namespace ProgramminClass3.AngularLesson.Models
         public int Id { get; set; }
 
         [Required]
-        [StingLenght(100)]
+        [StringLength(100)]
         public string Name { get; set; }
 
-        [StringLenght(500)]
+        [StringLength(500)]
         public string Description { get; set; }
     }
 }
