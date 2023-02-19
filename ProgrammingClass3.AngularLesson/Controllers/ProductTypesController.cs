@@ -5,7 +5,7 @@ using ProgrammingClass3.AngularLesson.Models;
 namespace ProgrammingClass3.AngularLesson.Controllers
 {
     [ApiController]
-    [Route("api/productTypes")]
+    [Route("api/product-types")]
     public class ProductTypesController : ControllerBase
     {
         private ApplicationDbContext _dbContext;

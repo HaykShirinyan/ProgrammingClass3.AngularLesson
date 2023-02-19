@@ -6,7 +6,7 @@ using ProgrammingClass3.AngularLesson.Models;
 namespace ProgrammingClass3.AngularLesson.Controllers
 {
     [ApiController]
-    [Route("api/unitOfMeasures")]
+    [Route("api/unit-of-measures")]
     public class UnitOfMeasuresController : ControllerBase
     {
         private ApplicationDbContext _dbContext;
