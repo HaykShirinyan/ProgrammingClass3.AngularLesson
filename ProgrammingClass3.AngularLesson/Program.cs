@@ -17,15 +17,15 @@ namespace ProgrammingClass3.AngularLesson
 
             // Add services to the container.
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+            builder.Services.AddDbContext<Data.IProductTypeRepository>(options =>
                 options.UseSqlServer(connectionString));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
             builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+                .AddEntityFrameworkStores<Data.IProductTypeRepository>();
 
             builder.Services.AddIdentityServer()
-                .AddApiAuthorization<ApplicationUser, ApplicationDbContext>();
+                .AddApiAuthorization<ApplicationUser, Data.IProductTypeRepository>();
 
             builder.Services.AddAuthentication()
                 .AddIdentityServerJwt();
@@ -35,6 +35,7 @@ namespace ProgrammingClass3.AngularLesson
 
             // ProductRepository service enq avelacnum serice registrations-i mej
             builder.Services.AddTransient<IProductRepository, ProductRepository>();
+            builder.Services.AddTransient<Repositories.Definitions.IProductTypeRepository, ProductTypeRepository>();
 
             var app = builder.Build();
 

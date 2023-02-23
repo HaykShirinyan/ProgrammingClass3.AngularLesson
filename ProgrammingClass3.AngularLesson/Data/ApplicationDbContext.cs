@@ -6,13 +6,13 @@ using ProgrammingClass3.AngularLesson.Models;
 
 namespace ProgrammingClass3.AngularLesson.Data
 {
-    public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>
+    public class IProductTypeRepository : ApiAuthorizationDbContext<ApplicationUser>
     {
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductType> ProductTypes { get; set; }
         public DbSet<UnitOfMeasure> UnitOfMeasures { get; set; }
 
-        public ApplicationDbContext(DbContextOptions options, IOptions<OperationalStoreOptions> operationalStoreOptions)
+        public IProductTypeRepository(DbContextOptions options, IOptions<OperationalStoreOptions> operationalStoreOptions)
             : base(options, operationalStoreOptions)
         {
 

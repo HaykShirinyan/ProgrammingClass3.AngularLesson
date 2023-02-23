@@ -11,7 +11,7 @@ using ProgrammingClass3.AngularLesson.Data;
 
 namespace ProgrammingClass3.AngularLesson.Data.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
+    [DbContext(typeof(IProductTypeRepository))]
     [Migration("20230205201146_Products")]
     partial class Products
     {

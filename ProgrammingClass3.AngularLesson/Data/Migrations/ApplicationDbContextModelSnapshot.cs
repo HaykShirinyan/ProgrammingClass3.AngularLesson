@@ -10,7 +10,7 @@ using ProgrammingClass3.AngularLesson.Data;
 
 namespace ProgrammingClass3.AngularLesson.Data.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
+    [DbContext(typeof(IProductTypeRepository))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

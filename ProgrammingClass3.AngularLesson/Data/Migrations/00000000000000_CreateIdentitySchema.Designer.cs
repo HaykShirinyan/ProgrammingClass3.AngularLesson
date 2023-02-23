@@ -9,7 +9,7 @@ using System;
 
 namespace ProgrammingClass3.AngularLesson.Data.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
+    [DbContext(typeof(IProductTypeRepository))]
     [Migration("00000000000000_CreateIdentitySchema")]
     partial class CreateIdentitySchema
     {

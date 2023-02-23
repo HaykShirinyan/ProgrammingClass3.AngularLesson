@@ -6,9 +6,9 @@ namespace ProgrammingClass3.AngularLesson.Repositories.Implementations
 {
     public class ProductRepository : IProductRepository
     {
-        private ApplicationDbContext _dbContext;
+        private Data.IProductTypeRepository _dbContext;
 
-        public ProductRepository(ApplicationDbContext dbContext)
+        public ProductRepository(Data.IProductTypeRepository dbContext)
         {
             _dbContext = dbContext;
         }   
