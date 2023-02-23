@@ -1,34 +1,34 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using ProgrammingClass3.AngularLesson.Data;
 using ProgrammingClass3.AngularLesson.Data.Migrations;
 using ProgrammingClass3.AngularLesson.Models;
+using ProgrammingClass3.AngularLesson.Repositories.Definitions;
 
 namespace ProgrammingClass3.AngularLesson.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/unitofmeasures")]
     [ApiController]
     public class UnitOfMeasuresController : ControllerBase
     {
-        private ApplicationDbContext _dbContext;
+        private IUnitOfMeasureRepository _unitOfMeasuresRepository;
 
-        public UnitOfMeasuresController(ApplicationDbContext dbContext)
+        public UnitOfMeasuresController(IUnitOfMeasureRepository unitOfMeasureRepository)
         {
-            _dbContext = dbContext;
+            _unitOfMeasuresRepository = unitOfMeasureRepository;
         }
 
         [HttpGet]
-        public IActionResult GetAllProducts()
+        public IActionResult GetAllUnitOfMeasure()
         {
-            var unitOfMeasure = _dbContext.UnitOfMeasures.ToList();
+            var unitOfMeasures = _unitOfMeasuresRepository.GetAll();
 
-            return Ok(unitOfMeasure);
+            return Ok(unitOfMeasures);
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetProduct(int id)
+        public IActionResult GetUnitOfMeasure(int id)
         {
-            var unitOfMeasure = _dbContext.UnitOfMeasures.Find(id);
+            var unitOfMeasure = _unitOfMeasuresRepository.Get(id);
 
             if (unitOfMeasure == null)
             {
@@ -39,39 +39,34 @@ namespace ProgrammingClass3.AngularLesson.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddProduct(UnitOfMeasure unitOfMeasure)
+        public IActionResult AddUnitOfMeasure(UnitOfMeasure unitOfMeasure)
         {
-            _dbContext.UnitOfMeasures.Add(unitOfMeasure);
-            _dbContext.SaveChanges();
+            _unitOfMeasuresRepository.Add(unitOfMeasure);
 
             return Ok(unitOfMeasure);
         }
 
         [HttpPut("{id}")]
-        public IActionResult UpdateProduct(int id, UnitOfMeasure unitOfMeasure)
+        public IActionResult UpdateUnitOfMeasure(int id, UnitOfMeasure unitOfMeasure)
         {
             if (id != unitOfMeasure.Id)
             {
                 return BadRequest("ID in the request body must be equal to ID in the URL.");
             }
 
-            _dbContext.UnitOfMeasures.Update(unitOfMeasure);
-            _dbContext.SaveChanges();
+            _unitOfMeasuresRepository.Update(unitOfMeasure);
 
             return Ok(unitOfMeasure);
         }
 
         [HttpDelete("{id}")]
-        public IActionResult DeleteProduct(int id)
+        public IActionResult DeleteUnitOfMeasure(int id)
         {
-            var unitOfMeasure = _dbContext.UnitOfMeasures.Find(id);
+            var deleteUnitOfMeasure = _unitOfMeasuresRepository.Delete(id);
 
-            if (unitOfMeasure != null)
+            if (deleteUnitOfMeasure != null)
             {
-                _dbContext.UnitOfMeasures.Remove(unitOfMeasure);
-                _dbContext.SaveChanges();
-
-                return Ok(unitOfMeasure);
+                return Ok(deleteUnitOfMeasure);
             }
 
             return NotFound();

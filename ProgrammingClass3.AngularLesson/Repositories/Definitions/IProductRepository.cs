@@ -13,5 +13,6 @@ namespace ProgrammingClass3.AngularLesson.Repositories.Definitions
         Product Update(Product product);
 
         Product Delete(int id);
+        
     }
 }

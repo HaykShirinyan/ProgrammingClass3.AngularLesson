@@ -35,6 +35,8 @@
     <None Remove="ClientApp\src\app\shared\models\product.ts" />
     <None Remove="ClientApp\src\app\shared\models\productType.ts" />
     <None Remove="ClientApp\src\app\shared\models\unitofmeasure.ts" />
+    <None Remove="ClientApp\src\app\shared\services\product-type.service.ts" />
+    <None Remove="ClientApp\src\app\shared\services\unit-of-measure.service.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -43,6 +45,8 @@
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\product.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\productType.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\unitOfMeasure.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\product-type.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\unit-of-measure.service.ts" />
   </ItemGroup>
 
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
