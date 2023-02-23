@@ -6,6 +6,7 @@ using ProgrammingClass3.AngularLesson.Data;
 using ProgrammingClass3.AngularLesson.Models;
 using ProgrammingClass3.AngularLesson.Repositories.Definitions;
 using ProgrammingClass3.AngularLesson.Repositories.Implementations;
+using IProductTypeRepository = ProgrammingClass3.AngularLesson.Repositories.Definitions.IProductTypeRepository;
 
 namespace ProgrammingClass3.AngularLesson
 {
@@ -35,7 +36,7 @@ namespace ProgrammingClass3.AngularLesson
 
             // ProductRepository service enq avelacnum serice registrations-i mej
             builder.Services.AddTransient<IProductRepository, ProductRepository>();
-            builder.Services.AddTransient<Repositories.Definitions.IProductTypeRepository, ProductTypeRepository>();
+            builder.Services.AddTransient<IProductTypeRepository, ProductTypeRepository>();
 
             var app = builder.Build();
 
