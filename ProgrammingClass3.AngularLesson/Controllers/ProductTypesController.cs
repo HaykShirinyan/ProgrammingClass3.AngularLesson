@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ProgrammingClass3.AngularLesson.Data;
 using ProgrammingClass3.AngularLesson.Models;
+using ProgrammingClass3.AngularLesson.Repositories.Definitions;
 
 namespace ProgrammingClass3.AngularLesson.Controllers
 {
@@ -9,7 +10,7 @@ namespace ProgrammingClass3.AngularLesson.Controllers
     [ApiController]
     public class ProductTypesController : ControllerBase
     {
-        private IProductTypeRepository _productTypeRepository;
+        private readonly IProductTypeRepository _productTypeRepository;
 
         public ProductTypesController(IProductTypeRepository productTypeRepository)
         {
@@ -19,7 +20,7 @@ namespace ProgrammingClass3.AngularLesson.Controllers
         [HttpGet]
         public IActionResult GetAllProductTypes() 
         {
-            var productTypes = _productTypeRepository.ProductTypes.ToList();
+            var productTypes = _productTypeRepository.GetAll();
 
             return Ok(productTypes);
         }
@@ -27,7 +28,7 @@ namespace ProgrammingClass3.AngularLesson.Controllers
         [HttpGet("{id}")]
         public IActionResult GetProductType(int id) 
         {
-            var productType = _productTypeRepository.ProductTypes.Find(id);
+            var productType = _productTypeRepository.Get(id);
 
             if(productType == null) 
             {
@@ -40,9 +41,8 @@ namespace ProgrammingClass3.AngularLesson.Controllers
         [HttpPost]
         public IActionResult AddProductType(ProductType productType) 
         {
-            _productTypeRepository.ProductTypes.Add(productType);
-            _productTypeRepository.SaveChanges();
-
+            _productTypeRepository.Add(productType);
+            
             return Ok(productType);
         }
 
@@ -54,8 +54,7 @@ namespace ProgrammingClass3.AngularLesson.Controllers
                 return BadRequest("ID in the request body must be equal to ID in the URL.");
             }
 
-            _productTypeRepository.ProductTypes.Update(productType);
-            _productTypeRepository.SaveChanges();
+            _productTypeRepository.Update(productType);
 
             return Ok(productType);
         }

@@ -18,15 +18,15 @@ namespace ProgrammingClass3.AngularLesson
 
             // Add services to the container.
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-            builder.Services.AddDbContext<Data.IProductTypeRepository>(options =>
+            builder.Services.AddDbContext<Data.ApplicationDBContext>(options =>
                 options.UseSqlServer(connectionString));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
             builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<Data.IProductTypeRepository>();
+                .AddEntityFrameworkStores<Data.ApplicationDBContext>();
 
             builder.Services.AddIdentityServer()
-                .AddApiAuthorization<ApplicationUser, Data.IProductTypeRepository>();
+                .AddApiAuthorization<ApplicationUser, Data.ApplicationDBContext>();
 
             builder.Services.AddAuthentication()
                 .AddIdentityServerJwt();

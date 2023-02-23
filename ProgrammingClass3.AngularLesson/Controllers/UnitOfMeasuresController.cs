@@ -9,9 +9,9 @@ namespace ProgrammingClass3.AngularLesson.Controllers
     [ApiController]
     public class UnitOfMeasuresController : ControllerBase
     {
-        private IProductTypeRepository _dbContext;
+        private ApplicationDBContext _dbContext;
 
-        public UnitOfMeasuresController(IProductTypeRepository dbContext) 
+        public UnitOfMeasuresController(ApplicationDBContext dbContext) 
         {
             _dbContext = dbContext;
         }

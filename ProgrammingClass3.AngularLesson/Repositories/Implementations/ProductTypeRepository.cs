@@ -4,11 +4,11 @@ using ProgrammingClass3.AngularLesson.Repositories.Definitions;
 
 namespace ProgrammingClass3.AngularLesson.Repositories.Implementations
 {
-    public class ProductTypeRepository: Definitions.IProductTypeRepository
+    public class ProductTypeRepository: IProductTypeRepository
     {
-        private readonly Data.IProductTypeRepository _dbContext;
+        private readonly ApplicationDBContext _dbContext;
 
-        public ProductTypeRepository(Data.IProductTypeRepository dbContext)
+        public ProductTypeRepository(ApplicationDBContext dbContext)
         {
             _dbContext = dbContext;
         }
