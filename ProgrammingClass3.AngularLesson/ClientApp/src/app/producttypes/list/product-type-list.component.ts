@@ -3,7 +3,7 @@ import { Component, OnInit } from "@angular/core";
 import { ProductType } from "../../shared/models/productType";
 
 @Component({
-  templateUrl: './producttype-list.component.html'
+  templateUrl: './product-type-list.component.html'
 })
 export class ProductTypeListComponent implements OnInit {
   private _httpClient: HttpClient;

@@ -3,7 +3,7 @@ import { Component, OnInit } from "@angular/core";
 import { UnitOfMeasure } from "../../shared/models/unitOfMeasure";
 
 @Component({
-  templateUrl: './unitofmeasure-list.component.html'
+  templateUrl: './unit-of-measure-list.component.html'
 })
 export class UnitOfMeasureListComponent implements OnInit {
   private _httpClient: HttpClient;
