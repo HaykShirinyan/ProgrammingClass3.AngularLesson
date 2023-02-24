@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProgrammingClass3.AngularLesson.Data;
 using ProgrammingClass3.AngularLesson.Models;
+using ProgrammingClass3.AngularLesson.Repositories.Definitions;
 
 namespace ProgrammingClass3.AngularLesson.Controllers
 {
@@ -8,17 +9,17 @@ namespace ProgrammingClass3.AngularLesson.Controllers
     [Route("api/product-types")]
     public class ProductTypesController : ControllerBase
     {
-        private ApplicationDbContext _dbContext;
+        private IProductTypeRepository _productTypeRepository;
 
-        public ProductTypesController(ApplicationDbContext dbContext)
+        public ProductTypesController(IProductTypeRepository productTypeRepository)
         {
-            _dbContext = dbContext;
+            _productTypeRepository = productTypeRepository;
         }
 
         [HttpGet]
         public IActionResult GetAllProductTypes()
         {
-            var productTypes = _dbContext.ProductTypes.ToList();
+            var productTypes = _productTypeRepository.GetAll();
 
             return Ok(productTypes);
         }
@@ -26,7 +27,7 @@ namespace ProgrammingClass3.AngularLesson.Controllers
         [HttpGet("{id}")]
         public IActionResult GetProductType(int id)
         {
-            var productType = _dbContext.ProductTypes.Find(id);
+            var productType = _productTypeRepository.Get(id);
 
             if (productType == null)
             {
@@ -39,8 +40,7 @@ namespace ProgrammingClass3.AngularLesson.Controllers
         [HttpPost]
         public IActionResult AddProductType(ProductType productType)
         {
-            _dbContext.ProductTypes.Add(productType);
-            _dbContext.SaveChanges();
+            _productTypeRepository.Add(productType);
 
             return Ok(productType);
         }
@@ -53,8 +53,7 @@ namespace ProgrammingClass3.AngularLesson.Controllers
                 return BadRequest("ID in the request body must be equal to ID in the URL.");
             }
 
-            _dbContext.ProductTypes.Update(productType);
-            _dbContext.SaveChanges();
+            _productTypeRepository.Update(productType);
 
             return Ok(productType);
         }
@@ -62,13 +61,10 @@ namespace ProgrammingClass3.AngularLesson.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteProductType(int id)
         {
-            var productType = _dbContext.ProductTypes.Find(id);
+            var productType = _productTypeRepository.Delete(id);
 
             if (productType != null)
             {
-                _dbContext.ProductTypes.Remove(productType);
-                _dbContext.SaveChanges();
-
                 return Ok(productType);
             }
 
