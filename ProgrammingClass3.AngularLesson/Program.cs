@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.EntityFrameworkCore;
 using ProgrammingClass3.AngularLesson.Data;
 using ProgrammingClass3.AngularLesson.Models;
+using ProgrammingClass3.AngularLesson.Repositories.Definitions;
+using ProgrammingClass3.AngularLesson.Repositories.Implementations;
 
 namespace ProgrammingClass3.AngularLesson
 {
@@ -30,6 +32,9 @@ namespace ProgrammingClass3.AngularLesson
 
             builder.Services.AddControllersWithViews();
             builder.Services.AddRazorPages();
+
+            // ProductRepository service enq avelacnum serice registrations-i mej
+            builder.Services.AddTransient<IProductRepository, ProductRepository>();
 
             var app = builder.Build();
 
