@@ -4,7 +4,7 @@ namespace ProgrammingClass3.AngularLesson.Repositories.Definitions
 {
     public interface IUnitOfMeasureRepository
     {
-        List<IUnitOfMeasure> GetAll();
+        List<UnitOfMeasure> GetAll();
 
         UnitOfMeasure Get(int id);
 
