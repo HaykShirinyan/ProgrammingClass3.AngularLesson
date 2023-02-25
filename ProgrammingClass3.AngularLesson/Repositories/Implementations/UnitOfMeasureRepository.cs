@@ -4,7 +4,7 @@ using ProgrammingClass3.AngularLesson.Repositories.Definitions;
 
 namespace ProgrammingClass3.AngularLesson.Repositories.Implementations
 {
-    public class UnitOfMeasureRepository: IUbitOfMeasureRepository
+    public class UnitOfMeasureRepository: IUnitOfMeasureRepository
     {
         private ApplicationDbContext _dbContext;
 
