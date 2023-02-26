@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
-import { Producttype } from "../../shared/models/product-type";
+import { ProductType, } from "../../shared/models/product-type";
+import { ProductTypeService } from "../../shared/services/product-type.service";
 
 
 
@@ -8,17 +9,17 @@ import { Producttype } from "../../shared/models/product-type";
   templateUrl: './product-type-list.component.html'
 })
 export class ProductTypeListComponent implements OnInit {
-  private _httpClient: HttpClient;
+  private _producttypeService!: ProductTypeService;
 
-  public producttypes?: Producttype[];
+  public producttypes?: ProductType[];
 
-  constructor(httpClient: HttpClient) {
-    this._httpClient = httpClient;
+  constructor(productTypeService: ProductTypeService) {
+    this._producttypeService = productTypeService;
   }
 
   public ngOnInit(): void {
-    this._httpClient.get<Producttype[]>('api/producttypes')
-      .subscribe(producttypes => {
+    this._producttypeService.getAll()
+      .subscribe(producttypes => { 
         this.producttypes = producttypes;
       })
   }

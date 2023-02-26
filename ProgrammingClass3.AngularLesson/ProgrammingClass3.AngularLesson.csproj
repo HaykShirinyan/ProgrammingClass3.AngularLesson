@@ -36,6 +36,8 @@
     <None Remove="ClientApp\src\app\shared\models\product-type.ts" />
     <None Remove="ClientApp\src\app\shared\models\product.ts" />
     <None Remove="ClientApp\src\app\shared\models\unit-of-measure.ts" />
+    <None Remove="ClientApp\src\app\shared\services\product-type.service.ts" />
+    <None Remove="ClientApp\src\app\shared\services\unit-of-measure.service.ts" />
     <None Remove="ClientApp\src\app\unitofmeasures\list\unit-of-measure-list.component.ts" />
     <None Remove="ClientApp\src\app\shared\services\product.service.ts" />
   </ItemGroup>
@@ -47,6 +49,8 @@
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\product.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\product-type.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\unit-of-measure.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\product-type.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\services\unit-of-measure.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\unitofmeasures\list\unit-of-measure-list.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\services\product.service.ts" />
   </ItemGroup>
