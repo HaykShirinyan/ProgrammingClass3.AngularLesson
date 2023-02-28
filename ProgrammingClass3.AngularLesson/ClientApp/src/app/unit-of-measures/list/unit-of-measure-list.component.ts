@@ -14,7 +14,7 @@ export class UnitOfMeasureListComponent implements OnInit {
   public unitofmeasures?: UnitOfMeasure[];
 
   constructor(unitOfMeasure: UnitOfMeasureService) {
-    this._unitofmeasureService = unitOfMeasureService;
+    this._unitofmeasureService = unitOfMeasure;
   }
 
   public ngOnInit(): void {
