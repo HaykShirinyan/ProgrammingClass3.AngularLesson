@@ -16,6 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ProductListComponent } from './products/list/product-list.component';
 import { CreateProductComponent } from './products/create/create-product.component';
 import { EditProductComponent } from './products/edit/edit-product.component';
+import { CreateProductTypeComponent } from './product-types/create/create-product-type.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { EditProductComponent } from './products/edit/edit-product.component';
     FetchDataComponent,
     ProductListComponent,
     CreateProductComponent,
-    EditProductComponent
+    EditProductComponent,
+    CreateProductTypeComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
