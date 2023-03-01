@@ -1,12 +1,12 @@
 
-<form>
+<form (ngSubmit)="createProductType()">
   <div class="mb-3">
     <label for="productType-name" class="form-label">
       Name
     </label>
     <input id="productType-name"
            name="name"
-           class="form-controll"
+           class="form-control"
            [(ngModel)]="productType.name"/>
   </div>
 
@@ -16,13 +16,13 @@
     </label>
     <textarea id="productType-description"
               name="description"
-              class="form-controll"
+              class="form-control"
               [(ngModel)]="productType.description">
     </textarea>
   </div>
 
   <div>
-    <button type="submit" class="btn-primary btn-primary">
+    <button type="submit" class="btn btn-primary">
       Save
     </button>
   </div>

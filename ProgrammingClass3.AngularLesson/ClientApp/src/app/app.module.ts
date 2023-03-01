@@ -17,6 +17,8 @@ import { ProductListComponent } from './products/list/product-list.component';
 import { CreateProductComponent } from './products/create/create-product.component';
 import { EditProductComponent } from './products/edit/edit-product.component';
 import { CreateProductTypeComponent } from './product-types/create/create-product-type.component';
+import { ProductTypeListComponent } from './product-types/list/product-type-list.component';
+import { UnitOfMeasureListComponent } from './unit-of-measures/list/unit-of-measure-list.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { CreateProductTypeComponent } from './product-types/create/create-produc
     ProductListComponent,
     CreateProductComponent,
     EditProductComponent,
-    CreateProductTypeComponent
+    ProductTypeListComponent,
+    CreateProductTypeComponent,
+    UnitOfMeasureListComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
