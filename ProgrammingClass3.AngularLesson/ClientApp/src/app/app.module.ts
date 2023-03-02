@@ -14,6 +14,9 @@ import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
 import { AppRoutingModule } from './app-routing.module';
 import { ProductListComponent } from './products/list/product-list.component';
+import { CreateProductComponent } from './products/create/create-product.component';
+import { EditProductComponent } from './products/edit/edit-product.component';
+import { CreateProductTypeComponent } from './product-types/create/create-product-type.component';
 import { ProductTypeListComponent } from './product-types/list/product-type-list.component';
 import { UnitOfMeasureListComponent } from './unit-of-measures/list/unit-of-measure-list.component';
 
@@ -25,8 +28,11 @@ import { UnitOfMeasureListComponent } from './unit-of-measures/list/unit-of-meas
     CounterComponent,
     FetchDataComponent,
     ProductListComponent,
+    CreateProductComponent,
+    EditProductComponent,
     ProductTypeListComponent,
-    UnitOfMeasureListComponent,
+    CreateProductTypeComponent,
+    UnitOfMeasureListComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
