@@ -1,11 +1,16 @@
 
 <div>
+  <a class="btn-primary btn-primary" [routerLink]="['create']">
+    Create new Unit of Measure
+  </a>
+
   <table class="table">
     <thead>
       <tr>
         <th>Id</th>
         <th>Name</th>
         <th>Description</th>
+        <th>Actions</th>
       </tr>
     </thead>
 
@@ -21,6 +26,12 @@
 
         <td>
           {{unitOfMeasure.description}}
+        </td>
+
+        <td>
+          <a class="btn-primary btn-secondary" [routerLink]="['edit']">
+            Edit
+          </a>
         </td>
       </tr>
     </tbody>
