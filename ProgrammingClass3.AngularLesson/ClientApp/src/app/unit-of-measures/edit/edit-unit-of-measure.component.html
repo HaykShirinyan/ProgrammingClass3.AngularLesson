@@ -1,5 +1,5 @@
 
-<form (ngSubmit)="createUnitOfMeasure()">
+<form *ngIf="unitOfMeasure" (ngSubmit)="updateUnitOfMeasure()">
   <div class="mb-3">
     <label for="unitOfMeasure.name" class="form-label">
       Name

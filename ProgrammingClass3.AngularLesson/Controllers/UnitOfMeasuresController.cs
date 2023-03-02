@@ -15,7 +15,7 @@ namespace ProgrammingClass3.AngularLesson.Controllers
 
         public UnitOfMeasuresController(IUnitOfMeasureRepository unitOfMeasureRepository) 
         {
-            unitOfMeasureRepository = _unitOfMeasureRepository;
+             _unitOfMeasureRepository = unitOfMeasureRepository;
         }
 
         [HttpGet]

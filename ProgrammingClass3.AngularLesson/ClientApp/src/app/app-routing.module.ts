@@ -11,6 +11,7 @@ import { CreateProductComponent } from "./products/create/create-product.compone
 import { EditProductComponent } from "./products/edit/edit-product.component";
 import { ProductListComponent } from "./products/list/product-list.component";
 import { CreateUnitOfMeasureComponent } from "./unit-of-measures/create/create-unit-of-measure.component";
+import { EditUnitOfMeasureComponent } from "./unit-of-measures/edit/edit-unit-of-measure.component";
 import { UnitOfMeasureListComponent } from "./unit-of-measures/list/unit-of-measure-list.component";
 
 
@@ -25,7 +26,8 @@ const routes: Routes = [
   { path: 'product-types/create', component: CreateProductTypeComponent },
   { path: 'product-types/edit/:id', component: EditProductTypeComponent },
   { path: 'unit-of-measures', component: UnitOfMeasureListComponent },
-  { path: 'unit-of-measures/create', component: CreateUnitOfMeasureComponent }
+  { path: 'unit-of-measures/create', component: CreateUnitOfMeasureComponent },
+  { path: 'unit-of-measures/edit/:id', component: EditUnitOfMeasureComponent }
 ];
 
 @NgModule({

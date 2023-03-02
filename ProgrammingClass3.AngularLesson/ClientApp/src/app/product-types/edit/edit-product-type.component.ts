@@ -29,7 +29,7 @@ export class EditProductTypeComponent implements OnInit {
     this._productTypeService.get(Number(id))
       .subscribe(productType => {
         this.productType = productType;
-      })
+      });
   }
 
   public updateProductType(): void {
