@@ -6,7 +6,7 @@ import { ProductTypeService } from "../../shared/services/product-type.service";
 @Component({
   templateUrl: './edit-product-type.component.html'
 })
-export class EdidProductTypeComponent implements OnInit {
+export class EditProductTypeComponent implements OnInit {
   private readonly _productTypeService: ProductTypeService;
   private readonly _router: Router;
   private readonly _activatedRoute: ActivatedRoute;

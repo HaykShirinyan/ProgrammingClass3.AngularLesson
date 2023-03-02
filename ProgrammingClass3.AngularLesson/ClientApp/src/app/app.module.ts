@@ -19,7 +19,7 @@ import { EditProductComponent } from './products/edit/edit-product.component';
 import { CreateProductTypeComponent } from './product-types/create/create-product-type.component';
 import { ProductTypeListComponent } from './product-types/list/product-type-list.component';
 import { UnitOfMeasureListComponent } from './unit-of-measures/list/unit-of-measure-list.component';
-import { EdidProductTypeComponent } from './product-types/edit/edit-product-type.component';
+import { EditProductTypeComponent } from './product-types/edit/edit-product-type.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +33,7 @@ import { EdidProductTypeComponent } from './product-types/edit/edit-product-type
     EditProductComponent,
     ProductTypeListComponent,
     CreateProductTypeComponent,
-    EdidProductTypeComponent,
+    EditProductTypeComponent,
     UnitOfMeasureListComponent
   ],
   imports: [
