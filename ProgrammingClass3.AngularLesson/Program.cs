@@ -37,6 +37,7 @@ namespace ProgrammingClass3.AngularLesson
             // ProductRepository service enq avelacnum serice registrations-i mej
             builder.Services.AddTransient<IProductRepository, ProductRepository>();
             builder.Services.AddTransient<IProductTypeRepository, ProductTypeRepository>();
+            builder.Services.AddTransient<IUnitOfMeasureRepository, UnitOfMeasureRepository>();
 
             var app = builder.Build();
 
