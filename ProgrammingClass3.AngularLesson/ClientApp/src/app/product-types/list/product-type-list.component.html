@@ -1,5 +1,9 @@
 
 <div>
+  <a class="btn btn-primary" [routerLink]="['create']">
+    Create Product Type
+  </a>
+
   <table class="table">
     <thead>
       <tr>
@@ -21,6 +25,12 @@
 
         <td>
           {{productType.description}}
+        </td>
+
+        <td>
+          <a class="btn btn-secondary" [routerLink]="['edit, productType.id']">
+            Edit
+          </a>
         </td>
       </tr>
     </tbody>

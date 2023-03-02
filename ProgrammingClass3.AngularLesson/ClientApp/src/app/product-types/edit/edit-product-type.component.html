@@ -1,5 +1,5 @@
 
-<form (ngSubmit)="createProductType()">
+<form *ngIf="productType" (ngSubmit)="updateProductType()">
   <div class="mb-3">
     <label for="productType-name" class="form-label">
       Name
@@ -7,7 +7,7 @@
     <input id="productType-name"
            name="name"
            class="form-control"
-           [(ngModel)]="productType.name"/>
+           [(ngModel)]="productType.name" />
   </div>
 
   <div class="mb-3">

@@ -20,4 +20,11 @@ export class CreateProductTypeComponent {
     this._router = router;
   }
 
+  public createProductType(): void {
+    this._productTypeService.add(this.productType)
+      .subscribe(() => {
+        this._router.navigate(['product-types']);
+      });
+  }
+
 }
