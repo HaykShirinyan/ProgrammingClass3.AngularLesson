@@ -16,8 +16,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { ProductListComponent } from './products/list/product-list.component';
 import { CreateProductComponent } from './products/create/create-product.component';
 import { EditProductComponent } from './products/edit/edit-product.component';
-import { ProductTypeListComponent } from './producttypes/list/product-type-list.component';
-import { UnitOfMeasureListComponent } from './unitofmeasures/list/unit-of-measure-list.component';
+import { ProductTypeListComponent } from './product-types/list/product-type-list.component';
+import { UnitOfMeasureListComponent } from './unit-of-measures/list/unit-of-measure-list.component';
+import { CreateProductTypeComponent } from './product-types/create/create-product-type.component';
+import { EditProductTypeComponent } from './product-types/edit/edit-product-type.component';
+import { CreateUnitOfMeasureComponent } from './unit-of-measures/create/create-unit-of-measure.component';
+import { EditUnitOfMeasureComponent } from './unit-of-measures/edit/edit-unit-of-measure.component';
 
 @NgModule({
   declarations: [
@@ -28,10 +32,13 @@ import { UnitOfMeasureListComponent } from './unitofmeasures/list/unit-of-measur
     FetchDataComponent,
     ProductListComponent,
     CreateProductComponent,
-    EditProductComponent
-    ProductListComponent,
+    EditProductComponent,
     ProductTypeListComponent,
-    UnitOfMeasureListComponent
+    UnitOfMeasureListComponent,
+    CreateProductTypeComponent,
+    EditProductTypeComponent,
+    CreateUnitOfMeasureComponent,
+    EditUnitOfMeasureComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

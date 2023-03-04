@@ -16,4 +16,16 @@ export class ProductTypeService {
   public getAll(): Observable<ProductType[]> {
     return this._http.get<ProductType[]>('api/producttypes');
   }
+
+  public get(id: number): Observable<ProductType> {
+    return this._http.get<ProductType>('api/producttypes/' + id);
+  }
+
+  public add(producttype: ProductType): Observable<ProductType> {
+    return this._http.post<ProductType>('api/producttypes', producttype);
+  }
+
+  public update(producttype: ProductType): Observable<ProductType> {
+    return this._http.put<ProductType>('api/producttypes/' + producttype.id, producttype);
+  }
 }
