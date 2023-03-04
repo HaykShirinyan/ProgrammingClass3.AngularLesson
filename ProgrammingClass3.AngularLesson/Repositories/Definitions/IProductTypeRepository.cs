@@ -7,9 +7,7 @@ namespace ProgrammingClass3.AngularLesson.Repositories.Definitions
         List<ProductType> GetAll();
 
         ProductType Get(int id);
-
         ProductType Add(ProductType productType);
-
         ProductType Update(ProductType productType);
 
         ProductType Delete(int id);
