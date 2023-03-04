@@ -14,6 +14,8 @@ import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
 import { AppRoutingModule } from './app-routing.module';
 import { ProductListComponent } from './products/list/product-list.component';
+import { CreateProductComponent } from './products/create/create-product.component';
+import { EditProductComponent } from './products/edit/edit-product.component';
 import { ProductTypeListComponent } from './producttypes/list/product-type-list.component';
 import { UnitOfMeasureListComponent } from './unitofmeasures/list/unit-of-measure-list.component';
 
@@ -24,6 +26,9 @@ import { UnitOfMeasureListComponent } from './unitofmeasures/list/unit-of-measur
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
+    ProductListComponent,
+    CreateProductComponent,
+    EditProductComponent
     ProductListComponent,
     ProductTypeListComponent,
     UnitOfMeasureListComponent
