@@ -16,6 +16,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { ProductListComponent } from './products/list/product-list.component';
 import { UnitOfMeasureListComponent } from './unitofmeasures/list/unit-of-measure-list.component';
 import { ProductTypeListComponent } from './producttypes/list/product-types-list.component';
+import { CreateProductComponent } from './products/create/create-product.component';
+import { EditProductComponent } from './products/edit/edit-product.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,9 @@ import { ProductTypeListComponent } from './producttypes/list/product-types-list
     UnitOfMeasureListComponent,
     ProductTypeListComponent
 
+    ProductListComponent,
+    CreateProductComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
