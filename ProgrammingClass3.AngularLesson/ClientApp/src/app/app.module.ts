@@ -14,7 +14,6 @@ import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
 import { AppRoutingModule } from './app-routing.module';
 import { ProductListComponent } from './products/list/product-list.component';
-import { UnitOfMeasureComponent } from './unit-of-measure/list/unit-of-measure-list.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +22,6 @@ import { UnitOfMeasureComponent } from './unit-of-measure/list/unit-of-measure-l
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    ProductListComponent,
-    UnitOfMeasureComponent,
     ProductListComponent
   ],
   imports: [
