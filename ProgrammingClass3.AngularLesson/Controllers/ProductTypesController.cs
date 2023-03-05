@@ -68,9 +68,6 @@ namespace ProgrammingClass3.AngularLesson.Controllers
 
             if (productType!= null)
             {
-                _dbContext.ProductTypes.Remove(productType);
-                _dbContext.SaveChanges();
-
                 return Ok(productType);
             }
 
