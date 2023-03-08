@@ -1,0 +1,16 @@
+p{
+    font-size:18px;
+    font-weight: bold;
+}
+.app-spinner-conteiner{
+    position:fixed;
+    z-index: 1000;
+    background-color: #fff;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+}
