@@ -14,10 +14,13 @@ import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
 import { AppRoutingModule } from './app-routing.module';
 import { ProductListComponent } from './products/list/product-list.component';
-import { UnitOfMeasureListComponent } from './unitofmeasures/list/unit-of-measure-list.component';
-import { ProductTypeListComponent } from './producttypes/list/product-types-list.component';
+import { UnitOfMeasureListComponent } from './unit-of-measures/list/unit-of-measure-list.component';
+import { ProductTypeListComponent } from './product-types/list/product-type-list.component';
 import { CreateProductComponent } from './products/create/create-product.component';
 import { EditProductComponent } from './products/edit/edit-product.component';
+import { CreateProductTypeComponent } from './product-types/create/create-product-type.component';
+import { CreateUnitOfMeasureComponent } from './unit-of-measures/create/create-unit-of-measure.component ';
+import { EditProductTypeComponent } from './product-types/create/edit/edit-product-type-component';
 
 @NgModule({
   declarations: [
@@ -28,11 +31,14 @@ import { EditProductComponent } from './products/edit/edit-product.component';
     FetchDataComponent,
     ProductListComponent,
     UnitOfMeasureListComponent,
-    ProductTypeListComponent
-
+    ProductTypeListComponent,
+    CreateProductTypeComponent,
+    CreateUnitOfMeasureComponent,
     ProductListComponent,
     CreateProductComponent,
-    EditProductComponent
+    EditProductComponent,
+    EditProductTypeComponent,
+    UnitOfMeasureListComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

@@ -1,0 +1,29 @@
+
+<form (ngSubmit)="createUnitOfMeasure()">
+  <div class="mb-3">
+    <label for="unitOfMeasure-name" class="form-label">
+      Name
+    </label>
+    <input id="unitOfMeasure-name"
+           name="name"
+           class="form-control"
+           [(ngModel)]="unitOfMeasure-name" />
+  </div>
+
+  <div class="mb-3">
+    <label for="unitOfMeasure-description" class="form-label">
+      Description
+    </label>
+    <textarea id="unitOfMeasure-description"
+              name="description"
+              class="form-control"
+              [(ngModel)]="unitOfMeasure.description">
+    </textarea>
+  </div>
+
+  <div>
+    <button type="submit" class="btn-primary btn">
+      Save
+    </button>
+  </div>
+</form>

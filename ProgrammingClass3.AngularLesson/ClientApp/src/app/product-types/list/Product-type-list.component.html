@@ -1,5 +1,9 @@
 
 <div>
+  <a class="btn btn-primary" [routrLink]="['create']">
+    Create ProductTypes
+  </a>
+
   <table class="table">
     <thead>
       <tr>
@@ -8,6 +12,7 @@
         <th>Description</th>
       </tr>
     </thead>
+
     <tbody>
       <tr *ngFor="let productType of ProductTypes">
         <td>
@@ -25,3 +30,4 @@
     </tbody>
   </table>
 </div>
+
