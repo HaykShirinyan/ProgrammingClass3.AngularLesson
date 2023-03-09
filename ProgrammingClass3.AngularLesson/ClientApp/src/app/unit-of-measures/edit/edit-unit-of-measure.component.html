@@ -1,3 +1,7 @@
+<app-loading-spinner [spinnerText]="spinnerText"
+                     [isVisible]="isLoading"
+                     (cancel)="cancelLoading()">
+</app-loading-spinner>
 
 <form *ngIf="unitOfMeasure" (ngSubmit)="updateUnitOfMeasure()">
   <div class="mb-3">

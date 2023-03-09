@@ -1,3 +1,7 @@
+<app-loading-spinner spinnerText="Creating new product type"
+                     [isVisible]="isLoading"
+                     (cancel)="cancelLoading()">
+</app-loading-spinner>
 
 <form (ngSubmit)="createProductType()">
   <div class="mb-3">

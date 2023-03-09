@@ -11,6 +11,7 @@ export class CreateProductTypeComponent {
   private readonly _router: Router;
 
   public productType: ProductType = {};
+  public isLoading: boolean = false;
 
   constructor(
     productTypeService: ProductTypeService,
@@ -21,10 +22,17 @@ export class CreateProductTypeComponent {
   }
 
   public createProductType(): void {
+    this.isLoading = true;
+
     this._productTypeService.add(this.productType)
       .subscribe(() => {
         this._router.navigate(['product-types']);
+        this.isLoading = false;
       });
+  }
+
+  public cancelLoading(): void {
+    this.isLoading = false;
   }
 
 }
