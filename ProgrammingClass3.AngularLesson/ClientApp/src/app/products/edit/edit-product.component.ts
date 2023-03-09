@@ -11,7 +11,7 @@ export class EditProductComponent implements OnInit {
   private readonly _router: Router;
   private readonly _activatedRoute: ActivatedRoute;
   public isLoading: boolean = false;
-  public isEditing: boolean = false;
+  public spinnerText!: string;
 
   public product?: Product;
 
@@ -26,8 +26,8 @@ export class EditProductComponent implements OnInit {
   }
 
   public ngOnInit(): void {
-    this.isEditing = false;
     this.isLoading = true;
+    this.spinnerText = 'Loading product data';
 
     let id = this._activatedRoute.snapshot.paramMap.get('id');
 
@@ -39,14 +39,13 @@ export class EditProductComponent implements OnInit {
   }
 
   public updateProduct(): void {
-    this.isEditing = true;
     this.isLoading = true;
+    this.spinnerText = 'Editing product';
 
     this._productService.update(this.product!)
       .subscribe(() => {
         this._router.navigate(['products']);
         this.isLoading = false;
-        this.isEditing = false;
       });
   }
 
