@@ -9,5 +9,6 @@ export class BackButtonComponent {
   @Input()
   public buttonText: string = 'Go back';
 
- 
+  @Input()
+  public backRouterLink!: string;
 }
