@@ -3,6 +3,10 @@
                      (cancel)="cancelLoading()">
 </app-loading-spinner>
 
+<app-back-button buttonText="Back to unit of measures list"
+                 backRouterLink="/unit-of-measures">
+</app-back-button>
+
 <form *ngIf="unitOfMeasure" (ngSubmit)="updateUnitOfMeasure()">
   <div class="mb-3">
     <label for="unitOfMeasure.name" class="form-label">

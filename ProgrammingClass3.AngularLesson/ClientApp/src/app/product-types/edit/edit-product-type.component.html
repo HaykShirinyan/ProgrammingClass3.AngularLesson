@@ -3,6 +3,10 @@
                      (cancel)="cancelLoading()">
 </app-loading-spinner>
 
+<app-back-button buttonText="Back to Product types"
+                 backRouterLink="/product-types">
+</app-back-button>
+
 <form *ngIf="productType" (ngSubmit)="updateProductType()">
   <div class="mb-3">
     <label for="productType-name" class="form-label">
