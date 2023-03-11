@@ -1,6 +1,6 @@
 using ProgrammingClass3.AngularLesson.Models;
 
-namespace ProgrammingClass3.AngularLesson.Repositeries.Definitions
+namespace ProgrammingClass3.AngularLesson.Repositories.Definitions
 {
     public interface IProductTypeRepository
     {

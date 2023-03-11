@@ -1,0 +1,56 @@
+<form (ngSubmit)="createProduct()">
+  <div class="mb-3">
+    <label for="roduct-name" class="form-label">
+      Name
+    </label>
+    <input id="product-name"
+           name="name"
+           class="form-control"
+           [(ngMdel)]="product.name" />
+  </div>
+
+  <div class="mb-3">
+    <label for="product-description" class="form-label">
+      Descrption
+    </label>
+    <textarea id="product-dscription"
+              name="description"
+              class="form-control"
+              [(ngMdel)]="product.description">
+</textarea>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="mb-3">
+        <label for="product-quantity" class="form-label">
+          Quantity
+        </label>
+        <input id="product-quantity"
+               name="quantity"
+               class="form-control"
+               type="number"
+               [(ngModel)]="product.quntity" />
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="mb-3">
+        <label for="product-unit-price" class="form-label">
+          Unit Price
+        </label>
+        <input id="product-unit-price"
+               name="unitPrice"
+               class="form-control"
+               type="number"
+               [(ngModel)]="product.unitPrice" />
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <button type="submit" class="btn-primary btn">
+      Save
+    </button>
+  </div>
+</form>
