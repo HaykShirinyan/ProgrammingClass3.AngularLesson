@@ -1,0 +1,28 @@
+<form *ngIf="unitOfMasure" (ngSubmit)="editUnitOfMeasure()">
+  <div class="mb-3">
+    <label for="unit-of-measure-name" class="form-label">
+      Name
+    </label>
+    <input id="unit-of-measure-name"
+           name="name"
+           class="form-control"
+           [(ngModel)]="unitOfMeasure.name" />
+  </div>
+
+  <div class="mb-3">
+    <label for="unit-of-measure-description" class="form-label">
+      Description
+    </label>
+    <textarea id="unit-of-measure-description"
+              name="description"
+              class="form-control"
+              [(ngModel)]="unitOfMeasure.description">
+     </textarea>
+  </div>
+
+  <div>
+    <button type="submit" class="btn-primary btn">
+      Save
+    </button>
+  </div>
+</form>

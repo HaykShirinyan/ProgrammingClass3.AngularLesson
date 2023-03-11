@@ -1,0 +1,27 @@
+<form (ngSubmit)="createProductType()">
+  <div class="mb-3">
+    <label for="product-type-name" class="form-label">
+      Name
+    </label>
+    <input id="product-type-name"
+           name="name"
+           class="form-control"
+           [(ngModel)]="productType.name" />
+  </div>
+
+  <div class="mb-3">
+    <label for="product-type-description" class="form-label">
+      Description
+    </label>
+    <input id="prduct-type-decription"
+           name="description"
+           class="form-label"
+           [(ngModel)]="productType.descriptin" />
+  </div>
+
+  <div>
+    <button type="submit" class="btn-primary btn">
+      Save
+    </button>
+  </div>
+</form>

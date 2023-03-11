@@ -1,0 +1,28 @@
+<form *ngIf="productTyp" (ngSubmit)="updateProductType()">
+  <div class="mb-3">
+    <label for="product-type-name" class="form-label">
+      Name
+    </label>
+    <input id="product-type-name"
+           name="name"
+           cass="form-control"
+           [(ngModel)]="productType.name" />
+  </div>
+
+  <div class="mb-3">
+    <label for="product-type-description" class="form-label">
+      Description
+    </label>
+    <textarea id="product-type-description"
+              name="description"
+              class="form-control"
+              [(ngModel)]="productType.description">
+     </textarea>
+  </div>
+
+  <div>
+    <button type="submit" class="btn btn-primary">
+      Save
+    </button>
+  </div>
+</form>
