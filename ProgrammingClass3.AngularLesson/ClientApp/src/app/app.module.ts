@@ -21,8 +21,9 @@ import { EditProductComponent } from './products/edit/edit-product.component';
 import { EditUnitOfMeasure } from './unit-of-measure/edit/edit-unit-of-measure.component';
 import { EditProductType } from './product-types/edit/edit-product-type.component';
 import { CreateUnitOfMeasureComponent } from './unit-of-measure/create/create-unit-of-measure.component';
-import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
+import { LoadingSpinnerComponent } from './shared/components/loading-spinner/loading-spinner.component';
 import { BackButtonComponent } from './back-button/back-button.component';
+import { UnitOfMeasureComponent } from './unit-of-measure/list/unit-of-measure-list.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { BackButtonComponent } from './back-button/back-button.component';
     CreateProductComponent,
     CreateProductType,
     EditProductComponent,
+    UnitOfMeasureComponent,
     EditUnitOfMeasure,
     EditProductType,
     CreateUnitOfMeasureComponent,
