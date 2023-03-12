@@ -21,6 +21,7 @@ import { EditProductComponent } from './products/edit/edit-product.component';
 import { CreateProductTypeComponent } from './product-types/create/create-product-type.component';
 import { CreateUnitOfMeasureComponent } from './unit-of-measures/create/create-unit-of-measure.component ';
 import { EditProductTypeComponent } from './product-types/create/edit/edit-product-type-component';
+import { LoadingSpinnerComponent } from './shared/components/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,8 @@ import { EditProductTypeComponent } from './product-types/create/edit/edit-produ
     EditProductComponent,
     EditProductTypeComponent,
     UnitOfMeasureListComponent
+    EditProductComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

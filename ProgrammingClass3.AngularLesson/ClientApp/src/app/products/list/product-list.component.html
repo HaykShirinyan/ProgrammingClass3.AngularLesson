@@ -1,4 +1,9 @@
 
+<app-loading-spinner spinnerText="Loading Products"
+                     [isVisible]="isLoading"
+                     (cancel)="cancelLoading()">
+</app-loading-spinner>
+
 <div>
   <a class="btn btn-primary" [routerLink]="['create']">
     Create Product

@@ -1,0 +1,14 @@
+
+<div *ngIf="isVisible" class="app-spinner-container align-items-center d-flex flex-column justify-content-center">
+  <div>
+    <p>
+      {{spinnerText}}
+    </p>
+
+    <div>
+      <button type="button" class="btn btn-secondary" (click)="onCancel()">
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>
