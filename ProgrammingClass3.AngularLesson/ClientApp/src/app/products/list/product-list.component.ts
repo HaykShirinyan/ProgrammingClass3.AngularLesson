@@ -1,16 +1,16 @@
 import { Component, OnInit } from "@angular/core";
 import { Product } from "../../shared/models/product";
-import { ProductService } from "../../shared/services/product.service";
+import { ProductSevice } from "../../shared/services/product.service";
 
 @Component({
   templateUrl: './product-list.component.html'
 })
 export class ProductListComponent implements OnInit {
-  private _productService: ProductService;
+  private _productService: ProductSevice;
 
   public products?: Product[];
 
-  constructor(productService: ProductService) {
+  constructor(productService: ProductSevice) {
     this._productService = productService 
   }
 
