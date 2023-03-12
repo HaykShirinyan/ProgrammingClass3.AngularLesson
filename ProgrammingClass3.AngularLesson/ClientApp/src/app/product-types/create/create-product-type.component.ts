@@ -1,7 +1,11 @@
+import { Component } from "@angular/core";
 import { Router } from "@angular/router";
 import { ProductType } from "../../shared/models/product-type";
 import { ProductTypeService } from "../../shared/services/product-type.service";
 
+@Component({
+  templateUrl: 'create-product-type.component.html'
+})
 export class CreateProductType {
   private _productTypeService: ProductTypeService;
   private _router: Router;

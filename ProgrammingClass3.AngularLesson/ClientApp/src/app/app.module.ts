@@ -14,6 +14,15 @@ import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
 import { AppRoutingModule } from './app-routing.module';
 import { ProductListComponent } from './products/list/product-list.component';
+import { ProductTypeComponent } from './product-types/list/product-type-list.component';
+import { CreateProductComponent } from './products/create/create-product.component';
+import { CreateProductType } from './product-types/create/create-product-type.component';
+import { EditProductComponent } from './products/edit/edit-product.component';
+import { EditUnitOfMeasure } from './unit-of-measure/edit/edit-unit-of-measure.component';
+import { EditProductType } from './product-types/edit/edit-product-type.component';
+import { CreateUnitOfMeasureComponent } from './unit-of-measure/create/create-unit-of-measure.component';
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
+import { BackButtonComponent } from './back-button/back-button.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +31,16 @@ import { ProductListComponent } from './products/list/product-list.component';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    ProductListComponent
+    ProductListComponent,
+    ProductTypeComponent,
+    CreateProductComponent,
+    CreateProductType,
+    EditProductComponent,
+    EditUnitOfMeasure,
+    EditProductType,
+    CreateUnitOfMeasureComponent,
+    LoadingSpinnerComponent,
+    BackButtonComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

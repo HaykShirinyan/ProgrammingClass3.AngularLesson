@@ -7,7 +7,7 @@
     <input id="product-type-name"
            name="name"
            class="form-control"
-           [(ngModel)]="productType.name"/>
+           [(ngModel)]="productType.name" />
   </div>
 
   <div class="mb-3">
@@ -17,7 +17,7 @@
     <input id="product-type-description"
            name="description"
            class="form-control"
-           [(ngModel)]="productType.description"/>
+           [(ngModel)]="productType.description" />
   </div>
 
   <div>
@@ -25,4 +25,7 @@
       Save
     </button>
   </div>
+
+  <app-back-button destination="product-types">
+  </app-back-button>
 </form>

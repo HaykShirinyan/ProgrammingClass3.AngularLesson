@@ -1,5 +1,5 @@
 
-<form *ngIf="productType" (ngSubmit)="updateProductType()">
+<form *ngIf="productType" (ngSubmit)="editProductType()">
   <div class="mb-3">
     <label for="product-type-name" class="form-label">
       Name
@@ -26,4 +26,7 @@
       Save
     </button>
   </div>
+
+  <app-back-button destination="product-types">
+  </app-back-button>
 </form>
