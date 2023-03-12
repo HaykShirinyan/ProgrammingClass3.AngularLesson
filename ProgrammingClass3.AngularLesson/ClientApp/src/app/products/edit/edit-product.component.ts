@@ -12,6 +12,7 @@ export class EditProductComponent implements OnInit {
   private readonly _activatedRoute: ActivatedRoute;
 
   public product?: Product;
+  public isLoading: boolean = false;
 
   constructor(
     productService: ProductService,
@@ -24,6 +25,7 @@ export class EditProductComponent implements OnInit {
   }
 
   public ngOnInit(): void {
+    
     let id = this._activatedRoute.snapshot.paramMap.get('id');
 
     this._productService.get(Number(id))
@@ -31,6 +33,8 @@ export class EditProductComponent implements OnInit {
         this.product = product;
       });
   }
+
+ 
 
   public updateProduct(): void {
     this._productService.update(this.product!)
