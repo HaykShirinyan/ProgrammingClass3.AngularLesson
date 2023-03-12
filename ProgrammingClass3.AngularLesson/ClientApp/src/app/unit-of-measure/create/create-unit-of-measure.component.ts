@@ -2,18 +2,18 @@ import { Component } from "@angular/core";
 import { Router } from "@angular/router";
 import { Product } from "../../shared/models/product";
 import { UnitOfMeasure } from "../../shared/models/unit-of-measure";
-import { UnitOfMasureSrvice } from "../../shared/services/product-type.service";
+import { UnitOfMeasureService } from "../../shared/services/unit-of-measure.service";
 
 @Component({
   templateUrl: './create-unit-of-measure.component.html'
 })
 export class CreateUnitOfMeasureComponent {
-  private _unitOfMeasureSrvice: UnitOfMasureSrvice;
+  private _unitOfMeasureSrvice: UnitOfMeasureService;
   private _router: Router;
 
-  public unitOfMeasure: UnitOfMasure = {};
+  public unitOfMeasure: UnitOfMeasure = {};
 
-  constructor(unitOfMeasureService: UnitOfMasureSrvice,
+  constructor(unitOfMeasureService: UnitOfMeasureService,
     router: Router)
   {
     this._unitOfMeasureSrvice = unitOfMeasureService;
