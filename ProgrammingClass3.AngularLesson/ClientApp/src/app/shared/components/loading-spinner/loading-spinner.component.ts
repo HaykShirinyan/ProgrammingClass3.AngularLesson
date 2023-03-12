@@ -20,5 +20,4 @@ export class LoadingSpinnerComponent {
   public onCancel(): void {
     this.cancel.emit();
   }
-
 }

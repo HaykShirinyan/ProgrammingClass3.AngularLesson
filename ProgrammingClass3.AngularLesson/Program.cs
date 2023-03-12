@@ -3,10 +3,12 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.EntityFrameworkCore;
 using ProgrammingClass3.AngularLesson.Data;
+using ProgrammingClass3.AngularLesson.DataTransferObjects;
 using ProgrammingClass3.AngularLesson.Models;
 using ProgrammingClass3.AngularLesson.Repositories.Definitions;
 using ProgrammingClass3.AngularLesson.Repositories.Implementations;
-using IProductTypeRepository = ProgrammingClass3.AngularLesson.Repositories.Definitions.IProductTypeRepository;
+using ProgrammingClass3.AngularLesson.Services.Definitions;
+using ProgrammingClass3.AngularLesson.Services.Implementations;
 
 namespace ProgrammingClass3.AngularLesson
 {
@@ -33,6 +35,11 @@ namespace ProgrammingClass3.AngularLesson
 
             builder.Services.AddControllersWithViews();
             builder.Services.AddRazorPages();
+
+            builder.Services.AddAutoMapper(typeof(ProductDto));
+
+            // ProductService avelacnum enq registrations-i mej
+            builder.Services.AddTransient<IProductService, ProductService>();
 
             // ProductRepository service enq avelacnum serice registrations-i mej
             builder.Services.AddTransient<IProductRepository, ProductRepository>();
