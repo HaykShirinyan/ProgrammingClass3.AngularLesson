@@ -5,7 +5,7 @@ import { ProductTypeService } from "../../shared/services/product-type.service";
 
 
 @Component({
-  templateUrl: './create-product-types.component.html'
+  templateUrl: './create-product-type.component.html'
 })
 export class CreateProductTypeComponent {
   private readonly _productTypeService: ProductTypeService;

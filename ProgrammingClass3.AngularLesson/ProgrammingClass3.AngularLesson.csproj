@@ -44,7 +44,7 @@
     <None Remove="ClientApp\src\app\shared\models\unit-of-measure.ts" />
     <None Remove="ClientApp\src\app\shared\services\product-type.service.ts" />
     <None Remove="ClientApp\src\app\shared\services\unit-of-measure.service.ts" />
-    <None Remove="ClientApp\src\app\unit-of-measures\create\create-unit-of-measure.component .ts" />
+    <None Remove="ClientApp\src\app\unit-of-measures\create\create-unit-of-measure.component.ts" />
     <None Remove="ClientApp\src\app\unit-of-measures\edit\edit-unit-of-measure.component.ts" />
     <None Remove="ClientApp\src\app\unit-of-measures\list\unit-of-measure-list.component.ts" />
     <None Remove="ClientApp\src\app\shared\services\product.service.ts" />
@@ -67,7 +67,7 @@
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\unit-of-measure.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\services\product-type.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\services\unit-of-measure.service.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\unit-of-measures\create\create-unit-of-measure.component .ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\unit-of-measures\create\create-unit-of-measure.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\unit-of-measures\edit\edit-unit-of-measure.component.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
