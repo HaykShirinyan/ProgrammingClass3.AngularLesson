@@ -1,19 +1,19 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
 import { Product } from "../../shared/models/product";
-import { ProductService } from "../../shared/services/product.service";
+import { ProductSevice } from "../../shared/services/product.service";
 
 @Component({
   templeteUrl: './create-product.component.html'
 })
 export class CreateProductComponent {
-  private readonly _productService: ProductService;
+  private readonly _productService: ProductSevice;
   private readonly _router: Router;
 
   public product: Product = {};
 
   constructor(
-    productService: ProductService,
+    productService: ProductSevice,
     router: Router
   ) {
     this._productService = this._productService;
