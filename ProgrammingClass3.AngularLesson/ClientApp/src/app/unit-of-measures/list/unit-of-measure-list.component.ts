@@ -12,15 +12,19 @@ export class UnitOfMeasureListComponent implements OnInit {
   private _unitofmeasureService!: UnitOfMeasureService;
 
   public unitofmeasures?: UnitOfMeasure[];
+  public isLoading: boolean = false;
 
   constructor(unitOfMeasure: UnitOfMeasureService) {
     this._unitofmeasureService = unitOfMeasure;
   }
 
   public ngOnInit(): void {
+    this.isLoading = true;
+
     this._unitofmeasureService.getAll()
       .subscribe(unitofmeasures => { 
         this.unitofmeasures = unitofmeasures;
+        this.isLoading = false;
       }); 
   }
 }

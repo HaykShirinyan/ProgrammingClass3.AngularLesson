@@ -1,5 +1,11 @@
 
-<div>
+<app-loading-spinner spinnerText="Loading Product Types"
+                     [isVisible]="isLoading"
+                     (cancel)="cancelLoading()">
+</app-loading-spinner>
+
+<app-go-back goBackText="Back To Product Type"></app-go-back>
+
   <a class="btn btn-primary" [routrLink]="['create']">
     Create ProductTypes
   </a>

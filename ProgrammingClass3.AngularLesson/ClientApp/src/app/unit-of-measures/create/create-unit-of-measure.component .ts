@@ -1,6 +1,5 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
-import { ProductType } from "../../shared/models/product-type";
 import { UnitOfMeasure } from "../../shared/models/unit-of-measure";
 import { UnitOfMeasureService } from "../../shared/services/unit-of-measure.service";
 

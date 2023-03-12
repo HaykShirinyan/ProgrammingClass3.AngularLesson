@@ -1,4 +1,7 @@
-
+<app-loading-spinner spinnerText="Loading Unit Of Measure"
+                     [isVisible]="isLoading"
+                     (cancel)="cancelLoading()">
+</app-loading-spinner>
 
 <div>
   <a class="btn btn-primary" [routrLink]="['create']" >

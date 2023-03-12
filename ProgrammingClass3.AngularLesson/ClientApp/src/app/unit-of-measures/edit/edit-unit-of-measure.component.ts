@@ -1,8 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { UnitOfMeasure } from "../../../shared/models/unit-of-measure";
-import { ProductTypeService } from "../../../shared/services/product-type.service";
-import { UnitOfMeasureService } from "../../../shared/services/unit-of-measure.service";
+import { UnitOfMeasure } from "../../shared/models/unit-of-measure";
+import { UnitOfMeasureService } from "../../shared/services/unit-of-measure.service";
 
 @Component({
   templateUrl: './edit-unit-of-measure.component.html'

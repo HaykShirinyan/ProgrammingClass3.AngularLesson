@@ -32,11 +32,12 @@
   <ItemGroup>
     <None Remove="ClientApp\src\app\app-routing.module.ts" />
     <None Remove="ClientApp\src\app\product-types\create\create-product-type.component.ts" />
-    <None Remove="ClientApp\src\app\product-types\create\edit\edit-product-type-component.ts" />
+    <None Remove="ClientApp\src\app\product-types\edit\edit-product-type-component.ts" />
     <None Remove="ClientApp\src\app\products\create\create-product.component.ts" />
     <None Remove="ClientApp\src\app\products\edit\edit-product.component.ts" />
     <None Remove="ClientApp\src\app\products\list\product-list.component.ts" />
     <None Remove="ClientApp\src\app\product-types\list\product-type-list.component.ts" />
+    <None Remove="ClientApp\src\app\shared\components\go-back\go-back.component.ts" />
     <None Remove="ClientApp\src\app\shared\models\product-type.ts" />
     <None Remove="ClientApp\src\app\shared\components\loading-spinner\loading-spinner.component.ts" />
     <None Remove="ClientApp\src\app\shared\models\product.ts" />
@@ -44,7 +45,7 @@
     <None Remove="ClientApp\src\app\shared\services\product-type.service.ts" />
     <None Remove="ClientApp\src\app\shared\services\unit-of-measure.service.ts" />
     <None Remove="ClientApp\src\app\unit-of-measures\create\create-unit-of-measure.component .ts" />
-    <None Remove="ClientApp\src\app\unit-of-measures\create\edit\edit-unit-of-measure.component.ts" />
+    <None Remove="ClientApp\src\app\unit-of-measures\edit\edit-unit-of-measure.component.ts" />
     <None Remove="ClientApp\src\app\unit-of-measures\list\unit-of-measure-list.component.ts" />
     <None Remove="ClientApp\src\app\shared\services\product.service.ts" />
   </ItemGroup>
@@ -52,11 +53,14 @@
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\app-routing.module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\product-types\create\create-product-type.component.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\product-types\create\edit\edit-product-type-component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\product-types\edit\edit-product-type-component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\src\app\products\create\create-product.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\products\edit\edit-product.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\products\list\product-list.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\product-types\list\product-type-list.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\components\go-back\go-back.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\components\loading-spinner\loading-spinner.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\product.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\product-type.ts" />
@@ -64,7 +68,9 @@
     <TypeScriptCompile Include="ClientApp\src\app\shared\services\product-type.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\services\unit-of-measure.service.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\unit-of-measures\create\create-unit-of-measure.component .ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\unit-of-measures\create\edit\edit-unit-of-measure.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\unit-of-measures\edit\edit-unit-of-measure.component.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\src\app\unit-of-measures\list\unit-of-measure-list.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\services\product.service.ts" />
   </ItemGroup>
