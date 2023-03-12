@@ -1,5 +1,5 @@
-<app-back-button [isVisible]="isLoading"
-                 back="BackLoading()">
+<app-back-button backtext="Back to Products"
+                 backRouterLink="/products">
 </app-back-button>
 
 <form *ngIf="product" (ngSubmit)="updateProduct()">

@@ -1,4 +1,3 @@
-
 import { Component, Input } from '@angular/core'
 
 @Component({
@@ -11,14 +10,9 @@ import { Component, Input } from '@angular/core'
 export class BackButtonComponent {
 
   @Input()
-  public backRouterLink: string [backRouterLink] = "['/Products']";
+    public backRouterLink!: string;
 
   @Input()
-  public backtext: string = 'Back to Products page';
-}
-
-  
-
- 
+  public backtext: string = 'Go Back';
 }
 

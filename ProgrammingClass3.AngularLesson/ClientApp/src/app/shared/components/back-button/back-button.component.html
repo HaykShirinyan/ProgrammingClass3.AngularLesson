@@ -1,9 +1,7 @@
-<div *ngIf="isVisible" class="app-back-button align-items-center d-flex flex-column justify-content-center">
-  <div>
+<div  class="app-back-button">
     <div>
-      <button type="button" class="btn btn-secondary" (click)="onBack()">
+      <button type="button" class="btn btn-secondary" [routerLink]="backRouterLink">
         Back
       </button>
     </div>
   </div>
-</div>
