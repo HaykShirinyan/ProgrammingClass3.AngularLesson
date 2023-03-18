@@ -2,10 +2,11 @@
 using ProgrammingClass3.AngularLesson.DataTransferObjects;
 using ProgrammingClass3.AngularLesson.Models;
 using ProgrammingClass3.AngularLesson.Repositories.Definitions;
+using ProgrammingClass3.AngularLesson.Services.Definitions;
 
 namespace ProgrammingClass3.AngularLesson.Services.Implementations
 {
-    public class ProductTypeService
+    public class ProductTypeService: IProductTypeService
     {
         private readonly IMapper _mapper;
         private readonly IProductTypeRepository _productTypeRepository;

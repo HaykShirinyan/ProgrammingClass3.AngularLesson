@@ -40,6 +40,8 @@ namespace ProgrammingClass3.AngularLesson
 
             // ProductService avelacnum enq registrations-i mej
             builder.Services.AddTransient<IProductService, ProductService>();
+            builder.Services.AddTransient<IProductTypeService, ProductTypeService>();
+            builder.Services.AddTransient<IUnitOfMeasureService, UnitOfMeasureService>();
 
             // ProductRepository service enq avelacnum serice registrations-i mej
             builder.Services.AddTransient<IProductRepository, ProductRepository>();

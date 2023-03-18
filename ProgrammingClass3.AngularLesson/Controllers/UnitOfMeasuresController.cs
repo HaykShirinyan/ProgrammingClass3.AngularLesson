@@ -6,6 +6,7 @@ using ProgrammingClass3.AngularLesson.DataTransferObjects;
 using ProgrammingClass3.AngularLesson.Models;
 using ProgrammingClass3.AngularLesson.Repositories.Definitions;
 using ProgrammingClass3.AngularLesson.Repositories.Implementations;
+using ProgrammingClass3.AngularLesson.Services.Definitions;
 
 namespace ProgrammingClass3.AngularLesson.Controllers
 {
@@ -13,45 +14,37 @@ namespace ProgrammingClass3.AngularLesson.Controllers
     [ApiController]
     public class UnitOfMeasuresController : ControllerBase
     {
-        private readonly IUnitOfMeasureRepository _unitOfMeasureRepository;
-        private readonly IMapper _mapper;
-
-        public UnitOfMeasuresController(IUnitOfMeasureRepository unitOfMeasureRepository, IMapper mapper) 
+        private readonly IUnitOfMeasureService _unitOfMeasureService;
+        public UnitOfMeasuresController(IUnitOfMeasureService unitOfMeasureService) 
         {
-            _unitOfMeasureRepository = unitOfMeasureRepository;
-            _mapper = mapper;
+            _unitOfMeasureService = unitOfMeasureService;
         }
 
         [HttpGet]
         public IActionResult GetAllUnitOfMeasures()
         {
-            var unitOfMeasures = _unitOfMeasureRepository.GetAll();
-            var unitOfMeasureDtoList = _mapper.Map<List<UnitOfMeasureDto>>(unitOfMeasures);
+            var unitOfMeasures = _unitOfMeasureService.GetAll();
 
-            return Ok(unitOfMeasureDtoList);
+            return Ok(unitOfMeasures);
         }
 
         [HttpGet("{id}")]
         public IActionResult GetUnitOfMeasure(int id) 
         {
-            var unitOfMeasure = _unitOfMeasureRepository.Get(id);
+            var unitOfMeasure = _unitOfMeasureService.Get(id);
 
             if (unitOfMeasure == null) 
             { 
                 return NotFound();
             }
 
-            var unitOfMeasureDto = _mapper.Map<UnitOfMeasureDto>(unitOfMeasure);
-
-            return Ok(unitOfMeasureDto);
+            return Ok(unitOfMeasure);
         }
 
         [HttpPost]
         public IActionResult AddUnitOfMeasure(UnitOfMeasureDto unitOfMeasure)
         {
-            var unitOfMeasureModel = _mapper.Map<UnitOfMeasure>(unitOfMeasure);
-
-            _unitOfMeasureRepository.Add(unitOfMeasureModel);
+            _unitOfMeasureService.Add(unitOfMeasure);
 
             return Ok(unitOfMeasure);
         }
@@ -63,9 +56,8 @@ namespace ProgrammingClass3.AngularLesson.Controllers
             {
                 return BadRequest("ID in the request body must be equal to ID in the URL.");
             }
-            var unitOfMeasureModel = _mapper.Map<UnitOfMeasure>(unitOfMeasure);
 
-            _unitOfMeasureRepository.Update(unitOfMeasureModel);
+            _unitOfMeasureService.Update(unitOfMeasure);
 
             return Ok(unitOfMeasure);
         }
@@ -73,13 +65,11 @@ namespace ProgrammingClass3.AngularLesson.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteUnitOfMeasure(int id)
         {
-            var deletedUnitOfMeasure = _unitOfMeasureRepository.Delete(id);
+            var deletedUnitOfMeasure = _unitOfMeasureService.Delete(id);
 
             if(deletedUnitOfMeasure != null)
             {
-                var unitOfMeasureDto = _mapper.Map<UnitOfMeasureDto>(deletedUnitOfMeasure);
-
-                return Ok(unitOfMeasureDto);
+                return Ok(deletedUnitOfMeasure);
             }
 
             return NotFound();

@@ -5,6 +5,7 @@ using ProgrammingClass3.AngularLesson.Data;
 using ProgrammingClass3.AngularLesson.DataTransferObjects;
 using ProgrammingClass3.AngularLesson.Models;
 using ProgrammingClass3.AngularLesson.Repositories.Definitions;
+using ProgrammingClass3.AngularLesson.Services.Definitions;
 
 namespace ProgrammingClass3.AngularLesson.Controllers
 {
@@ -12,45 +13,38 @@ namespace ProgrammingClass3.AngularLesson.Controllers
     [ApiController]
     public class ProductTypesController : ControllerBase
     {
-        private readonly IProductTypeRepository _productTypeRepository;
-        private readonly IMapper _mapper;
+        private readonly IProductTypeService _productTypeService;
 
-        public ProductTypesController(IProductTypeRepository productTypeRepository, IMapper mapper)
+        public ProductTypesController(IProductTypeService productTypeService)
         {
-            _productTypeRepository = productTypeRepository;
-            _mapper = mapper;
+            _productTypeService = productTypeService;
         }
 
         [HttpGet]
         public IActionResult GetAllProductTypes() 
         {
-            var productTypes = _productTypeRepository.GetAll();
-            var productTypeDtoList = _mapper.Map<List<ProductTypeDto>>(productTypes);
+            var productTypes = _productTypeService.GetAll();
 
-            return Ok(productTypeDtoList);
+            return Ok(productTypes);
         }
 
         [HttpGet("{id}")]
         public IActionResult GetProductType(int id) 
         {
-            var productType = _productTypeRepository.Get(id);
+            var productType = _productTypeService.Get(id);
 
             if(productType == null) 
             {
                 return NotFound();
             }
 
-            var productTypeDto = _mapper.Map<ProductTypeDto>(productType);
-
-            return Ok(productTypeDto);
+            return Ok(productType);
         }
 
         [HttpPost]
         public IActionResult AddProductType(ProductTypeDto productType) 
         {
-            var productTypeModel = _mapper.Map<ProductType>(productType);
-
-            _productTypeRepository.Add(productTypeModel);
+            _productTypeService.Add(productType);
             
             return Ok(productType);
         }
@@ -62,9 +56,7 @@ namespace ProgrammingClass3.AngularLesson.Controllers
             {
                 return BadRequest("ID in the request body must be equal to ID in the URL.");
             }
-            var productTypeModel = _mapper.Map<ProductType>(productType);
-
-            _productTypeRepository.Update(productTypeModel);
+            _productTypeService.Update(productType);
 
             return Ok(productType);
         }
@@ -72,13 +64,11 @@ namespace ProgrammingClass3.AngularLesson.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteProductType(int id) 
         {
-            var deleteProductType = _productTypeRepository.Delete(id);
+            var deleteProductType = _productTypeService.Delete(id);
 
             if (deleteProductType != null)
             {
-                var productTypeDto = _mapper.Map<ProductTypeDto>(deleteProductType);
-
-                return Ok(productTypeDto);
+                return Ok(deleteProductType);
             }
 
             return NotFound();
