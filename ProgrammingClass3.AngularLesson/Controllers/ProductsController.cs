@@ -1,7 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ProgrammingClass3.AngularLesson.DataTransferObjects;
 using ProgrammingClass3.AngularLesson.Models;
 using ProgrammingClass3.AngularLesson.Repositories.Definitions;
+using ProgrammingClass3.AngularLesson.Services.Definitions;
 
 namespace ProgrammingClass3.AngularLesson.Controllers
 {
@@ -9,25 +12,24 @@ namespace ProgrammingClass3.AngularLesson.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        private IProductRepository _productRepository;
+        private readonly IProductService _productService;
 
-        public ProductsController(IProductRepository productRepository)
+        public ProductsController(IProductService productService)
         {
-            _productRepository = productRepository;
+            _productService = productService;
         }
 
         [HttpGet]
         public IActionResult GetAllProducts()
         {
-            var products = _productRepository.GetAll();
-
+            var products = _productService.GetAll();
             return Ok(products);
         }
 
         [HttpGet("{id}")]
         public IActionResult GetProduct(int id)
         {
-            var product = _productRepository.Get(id);
+            var product = _productService.Get(id);
 
             if (product == null)
             {
@@ -38,22 +40,22 @@ namespace ProgrammingClass3.AngularLesson.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddProduct(Product product)
+        public IActionResult AddProduct(ProductDto product)
         {
-            _productRepository.Add(product);
+           _productService.Add(product);
 
             return Ok(product);
         }
 
         [HttpPut("{id}")]
-        public IActionResult UpdateProduct(int id, Product product)
+        public IActionResult UpdateProduct(int id, ProductDto product)
         {
             if (id != product.Id)
             {
                 return BadRequest("ID in the request body must be equal to ID in the URL.");
             }
 
-            _productRepository.Update(product);
+            _productService.Update(product);
 
             return Ok(product);
         }
@@ -61,7 +63,7 @@ namespace ProgrammingClass3.AngularLesson.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteProduct(int id)
         {
-            var deletedProduct = _productRepository.Delete(id);
+            var deletedProduct = _productService.Delete(id);
 
             if (deletedProduct != null)
             {
