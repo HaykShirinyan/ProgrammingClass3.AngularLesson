@@ -17,39 +17,39 @@ namespace ProgrammingClass3.AngularLesson.Services.Implementations
             _productRepository = productRepository;
         }
 
-        public List<ProductDto> GetAll()
+        public async Task<List<ProductDto>> GetAllAsync()
         {
-            var products = _productRepository.GetAll();
+            var products = await _productRepository.GetAllAsync();
             return _mapper.Map<List<ProductDto>>(products);
         }
 
-        public ProductDto Get(int id)
+        public async Task<ProductDto> GetAsync(int id)
         {
-            var product = _productRepository.Get(id);
+            var product = await _productRepository.GetAsync(id);
             return _mapper.Map<ProductDto>(product);
         }
 
-        public ProductDto Add(ProductDto productDto)
+        public async Task<ProductDto> AddAsync(ProductDto productDto)
         {
             var productModel = _mapper.Map<Product>(productDto);
 
-            _productRepository.Add(productModel);
+            await _productRepository.AddAsync(productModel);
 
             return productDto;
         }
 
-        public ProductDto Update(ProductDto productDto)
+        public async Task<ProductDto> UpdateAsync(ProductDto productDto)
         {
             var productModel = _mapper.Map<Product>(productDto);
 
-            _productRepository.Update(productModel);
+            await _productRepository.UpdateAsync(productModel);
 
             return productDto;
         }
 
-        public ProductDto Delete(int id)
+        public async Task<ProductDto> DeleteAsync(int id)
         {
-            var deleted = _productRepository.Delete(id);
+            var deleted = await _productRepository.DeleteAsync(id);
             return _mapper.Map<ProductDto>(deleted);
         }
     }
