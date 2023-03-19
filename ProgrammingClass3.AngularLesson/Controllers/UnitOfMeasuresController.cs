@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using ProgrammingClass3.AngularLesson.Data;
+using ProgrammingClass3.AngularLesson.Data.Migrations;
+using ProgrammingClass3.AngularLesson.DataTransferObjects;
 using ProgrammingClass3.AngularLesson.Models;
 using ProgrammingClass3.AngularLesson.Repositories.Definitions;
+using ProgrammingClass3.AngularLesson.Srvices.Definitions;
 
 namespace ProgrammingClass3.AngularLesson.Controllers
 {

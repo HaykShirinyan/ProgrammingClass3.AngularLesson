@@ -1,8 +1,11 @@
-import { OnInit } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { ProductType } from "../../shared/models/product-type";
 import { ProductTypeService } from "../../shared/services/product-type.service";
 
+@Component({
+  templateUrl: 'edit-product-type.component.html'
+  })
 export class EditProductType implements OnInit {
   private _productTypeService: ProductTypeService;
   private _router: Router;

@@ -4,6 +4,7 @@ import { Observable } from "rxjs";
 import { UnitOfMeasure } from "../../shared/models/unit-of-measure";
 import { UnitOfMeasureService } from "../../shared/services/unit-of-measure.service";
 
+
 @Component({
   templateUrl: './edit-unit-of-measure.component.html'
 })
@@ -16,11 +17,10 @@ export class EditUnitOfMeasure implements OnInit {
 
   constructor(unitOfMeasureService: UnitOfMeasureService,
     router: Router,
-    activatedRoute: ActivatedRoute)
-  {
+    activatedRoute: ActivatedRoute) {
     this._unitOfMeasureService = unitOfMeasureService,
-    this._router = router,
-    this._activatedRoute = activatedRoute
+      this._router = router,
+      this._activatedRoute = activatedRoute;
   }
 
   public ngOnInit(): void {
@@ -29,14 +29,14 @@ export class EditUnitOfMeasure implements OnInit {
     this._unitOfMeasureService.get(Number(id))
       .subscribe(unitOfMeasure => {
         this.unitOfMeasure = unitOfMeasure;
-      })
+      });
   }
 
   public editUnitOfMeasure(): void {
     this._unitOfMeasureService.update(this.unitOfMeasure)
       .subscribe(() => {
         this._router.navigate(['unit-of-measure']);
-      })
+      });
   }
 }
 
