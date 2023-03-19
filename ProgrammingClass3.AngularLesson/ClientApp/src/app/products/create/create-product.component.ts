@@ -23,7 +23,7 @@ export class CreateProductComponent {
   public createProduct(): void {
     this._productService.add(this.product)
       .subscribe(() => {
-        this._router.navigate(['products']);
+        this._router.navigate(['/products/create']);
       });
   }
 }

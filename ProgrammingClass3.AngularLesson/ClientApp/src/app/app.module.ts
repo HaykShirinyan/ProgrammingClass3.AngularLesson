@@ -23,6 +23,8 @@ import { EditProductType } from './product-types/edit/edit-product-type.componen
 import { CreateUnitOfMeasureComponent } from './unit-of-measure/create/create-unit-of-measure.component';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 import { BackButtonComponent } from './back-button/back-button.component';
+import {UnitOfMeasureComponent} from "./unit-of-measure/list/unit-of-measure-list.component";
+import { TicTacToeComponent } from './tic-tac-toe/tic-tac-toe.component';
 
 @NgModule({
   declarations: [
@@ -35,12 +37,14 @@ import { BackButtonComponent } from './back-button/back-button.component';
     ProductTypeComponent,
     CreateProductComponent,
     CreateProductType,
+    UnitOfMeasureComponent,
     EditProductComponent,
     EditUnitOfMeasure,
     EditProductType,
     CreateUnitOfMeasureComponent,
     LoadingSpinnerComponent,
-    BackButtonComponent
+    BackButtonComponent,
+    TicTacToeComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

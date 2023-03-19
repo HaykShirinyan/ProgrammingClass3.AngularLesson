@@ -3,14 +3,16 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-back-button',
-  templateUrl: './back-button.component.html',
-  styleUrls: ['./back-button.component.css']
+  templateUrl: './back-button.component.html'
 })
 export class BackButtonComponent {
   private router: Router;
 
   @Input()
   public destination: string = "";
+
+  @Input()
+  public linkName: string = "";
 
   constructor(router: Router) {
     this.router = router;
@@ -19,5 +21,4 @@ export class BackButtonComponent {
   public goBack(): void {
     this.router.navigate([`${this.destination}`])
   }
-
 }
