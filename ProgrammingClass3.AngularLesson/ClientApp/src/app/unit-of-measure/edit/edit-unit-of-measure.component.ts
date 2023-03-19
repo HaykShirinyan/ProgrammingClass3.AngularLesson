@@ -2,13 +2,13 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@anguar/router";
 import { Observable } from "rxjs";
 import { UnitOfMeasure } from "../../shared/models/unit-of-measure";
-import { UnitOfMeasureSrvice } from "../../shared/services/unit-of-measure.service";
+import { UnitOfMeasureService } from "../../shared/services/unit-of-measure.service";
 
 @Component({
   templateUrl: './edit-unit-of-measure.component.html'
 })
 export class EditUnitOfMeasure implements OnInit {
-  public _unitOfMeasureService: UnitOfMeasureSrvice;
+  public _unitOfMeasureService: UnitOfMeasureService;
   public _router: Router;
   public _activatedRoute: ActivatedRoute;
 
