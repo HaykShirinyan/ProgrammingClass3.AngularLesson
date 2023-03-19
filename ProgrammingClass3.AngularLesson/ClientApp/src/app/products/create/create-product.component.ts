@@ -4,7 +4,7 @@ import { Product } from "../../shared/models/product";
 import { ProductSevice } from "../../shared/services/product.service";
 
 @Component({
-  templeteUrl: './create-product.component.html'
+  templateUrl: './create-product.component.html'
 })
 export class CreateProductComponent {
   private readonly _productService: ProductSevice;
