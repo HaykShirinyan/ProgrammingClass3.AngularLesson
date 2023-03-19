@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ProgrammingClass3.AngularLesson.Data;
+using ProgrammingClass3.AngularLesson.DataTransferObjects;
 using ProgrammingClass3.AngularLesson.Models;
 using ProgrammingClass3.AngularLesson.Repositories.Definitions;
+using ProgrammingClass3.AngularLesson.Services.Definitions;
 
 namespace ProgrammingClass3.AngularLesson.Controllers
 {
@@ -9,17 +11,17 @@ namespace ProgrammingClass3.AngularLesson.Controllers
     [Route("api/product-types")]
     public class ProductTypesController : ControllerBase
     {
-        private IProductTypeRepository _productTypeRepository;
+        private IProductTypeService _productTypeService;
 
-        public ProductTypesController(IProductTypeRepository productTypeRepository)
+        public ProductTypesController(IProductTypeService productTypeService)
         {
-            _productTypeRepository = productTypeRepository;
+            _productTypeService = productTypeService;
         }
 
         [HttpGet]
         public IActionResult GetAllProductTypes()
         {
-            var productTypes = _productTypeRepository.GetAll();
+            var productTypes = _productTypeService.GetAll();
 
             return Ok(productTypes);
         }
@@ -27,7 +29,7 @@ namespace ProgrammingClass3.AngularLesson.Controllers
         [HttpGet("{id}")]
         public IActionResult GetProductType(int id)
         {
-            var productType = _productTypeRepository.Get(id);
+            var productType = _productTypeService.Get(id);
 
             if (productType == null)
             {
@@ -38,22 +40,22 @@ namespace ProgrammingClass3.AngularLesson.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddProductType(ProductType productType)
+        public IActionResult AddProductType(ProductTypeDto productType)
         {
-            _productTypeRepository.Add(productType);
+            _productTypeService.Add(productType);
 
             return Ok(productType);
         }
 
         [HttpPut("{id}")]
-        public IActionResult UpdateProductType(int id, ProductType productType)
+        public IActionResult UpdateProductType(int id, ProductTypeDto productType)
         {
             if (id != productType.Id)
             {
                 return BadRequest("ID in the request body must be equal to ID in the URL.");
             }
 
-            _productTypeRepository.Update(productType);
+            _productTypeService.Update(productType);
 
             return Ok(productType);
         }
@@ -61,7 +63,7 @@ namespace ProgrammingClass3.AngularLesson.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteProductType(int id)
         {
-            var productType = _productTypeRepository.Delete(id);
+            var productType = _productTypeService.Delete(id);
 
             if (productType != null)
             {

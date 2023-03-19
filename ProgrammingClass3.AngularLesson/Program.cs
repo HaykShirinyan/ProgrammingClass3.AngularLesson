@@ -37,12 +37,17 @@ namespace ProgrammingClass3.AngularLesson
             builder.Services.AddRazorPages();
 
             builder.Services.AddAutoMapper(typeof(ProductDto));
+            builder.Services.AddAutoMapper(typeof(UnitOfMeasureDto));
+            builder.Services.AddAutoMapper(typeof(ProductDto));
 
             // ProductService avelacnum enq registrations-i mej
+            builder.Services.AddTransient<IProductService, ProductService>();
             builder.Services.AddTransient<IProductService, ProductService>();
 
             // ProductRepository service enq avelacnum serice registrations-i mej
             builder.Services.AddTransient<IProductRepository, ProductRepository>();
+            builder.Services.AddTransient<IUnitOfMeasureRepository, UnitOfMeasureRepository>();
+            builder.Services.AddTransient<IProductTypeRepository, ProductTypeRepository>();
 
             var app = builder.Build();
 
