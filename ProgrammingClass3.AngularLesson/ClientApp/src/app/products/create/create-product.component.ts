@@ -16,7 +16,7 @@ export class CreateProductComponent {
     productService: ProductSevice,
     router: Router
   ) {
-    this._productService = this._productService;
+    this._productService = productService;
     this._router = router;
   }
 

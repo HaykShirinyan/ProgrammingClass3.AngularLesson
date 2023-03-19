@@ -14,7 +14,7 @@ export class EditProductType implements OnInit {
     router: Router,
     activatedRoute: ActivatedRoute)
   {
-    this._productTypeService = this.productTypeService
+    this._productTypeService = productTypeService
     this._router = router
     this._activatedRoute = activatedRoute
   }
@@ -22,8 +22,8 @@ export class EditProductType implements OnInit {
     let id = this._activatedRoute.snapshot.paramMap.get('id');
 
     this._productTypeService.get(Number(id))
-      .subscribe(this.productType => {
-        this.productType = this.productType;
+      .subscribe(productType => {
+        this.productType = this.productType
       });
   }
 
