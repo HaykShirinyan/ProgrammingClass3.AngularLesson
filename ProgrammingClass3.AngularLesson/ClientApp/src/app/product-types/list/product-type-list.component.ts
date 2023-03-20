@@ -17,11 +17,12 @@ export class ProductTypeListComponent implements OnInit {
   }
 
   public async ngOnInit(): Promise<void> {
-    this.isLoading = true;
-
-    this.productTypes = await this._productTypeService.getAll();
-
-    this.isLoading = false;
+    try {
+      this.isLoading = true;
+      this.productTypes = await this._productTypeService.getAll();
+    } finally {
+      this.isLoading = false;
+    }
   }
 
   public cancelLoading(): void {

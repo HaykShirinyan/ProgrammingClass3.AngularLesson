@@ -31,7 +31,7 @@ export class EditProductTypeComponent implements OnInit {
 
     let id = this._activatedRoute.snapshot.paramMap.get('id');
 
-    await this._productTypeService.get(Number(id));
+    this.productType = await this._productTypeService.get(Number(id));
 
     this.isLoading = false;
   }
