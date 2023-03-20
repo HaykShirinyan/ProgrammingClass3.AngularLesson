@@ -21,14 +21,9 @@ export class CreateProductComponent {
     this._router = router;
   }
 
-  public createProduct(): void {
-    this.isLoading = true;
-
-    this._productService.add(this.product)
-      .subscribe(() => {
-        this._router.navigate(['products']);
-        this.isLoading = false;
-      });
+  public async createProduct(): Promise<void> {
+    await this._productService.add(this.product);
+    this._router.navigate(['products']);
   }
 
   public cancelLoading(): void {
