@@ -21,14 +21,13 @@ export class CreateProductTypeComponent {
     this._router = router;
   }
 
-  public createProductType(): void {
+  public async createProductType(): Promise<void> {
     this.isLoading = true;
 
-    this._productTypeService.add(this.productType)
-      .subscribe(() => {
-        this._router.navigate(['product-types']);
-        this.isLoading = false;
-      });
+    await this._productTypeService.add(this.productType);
+    this._router.navigate(['product-types']);
+
+    this.isLoading = false;
   }
 
   public cancelLoading(): void {
