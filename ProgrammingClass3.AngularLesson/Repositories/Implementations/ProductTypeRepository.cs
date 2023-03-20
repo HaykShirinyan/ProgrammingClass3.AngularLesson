@@ -1,4 +1,5 @@
-﻿using ProgrammingClass3.AngularLesson.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using ProgrammingClass3.AngularLesson.Data;
 using ProgrammingClass3.AngularLesson.Models;
 using ProgrammingClass3.AngularLesson.Repositories.Definitions;
 
@@ -13,39 +14,39 @@ namespace ProgrammingClass3.AngularLesson.Repositories.Implementations
             _dbContext = dbContext;
         }
 
-        public List<ProductType> GetAll()
+        public async Task<List<ProductType>> GetAllAsync()
         {
-            return _dbContext.ProductTypes.ToList();
+            return await _dbContext.ProductTypes.ToListAsync();
         }
 
-        public ProductType Get(int id)
+        public async Task<ProductType> GetAsync(int id)
         {
-            return _dbContext.ProductTypes.Find(id);
+            return await _dbContext.ProductTypes.FindAsync(id);
         }
 
-        public ProductType Add(ProductType productType)
+        public async Task<ProductType> AddAsync(ProductType productType)
         {
             _dbContext.ProductTypes.Add(productType);
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
 
             return productType;
         }
 
-        public ProductType Update(ProductType productType)
+        public async Task<ProductType> UpdateAsync(ProductType productType)
         {
             _dbContext.Update(productType);
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
 
             return productType;
         }
 
-        public ProductType Delete(int id)
+        public async Task<ProductType> DeleteAsync(int id)
         {
-            var productType = _dbContext.ProductTypes.Find(id);
+            var productType = await _dbContext.ProductTypes.FindAsync(id);
             if(productType != null)
             {
                 _dbContext.Remove(productType);
-                _dbContext.SaveChanges();
+                await _dbContext.SaveChangesAsync();
 
                 return productType;
             }
