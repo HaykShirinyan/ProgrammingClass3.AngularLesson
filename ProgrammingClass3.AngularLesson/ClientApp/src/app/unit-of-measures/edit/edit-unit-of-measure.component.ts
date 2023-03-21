@@ -31,7 +31,7 @@ export class EditUnitOfMeasureComponent implements OnInit {
 
     let id = this._activatedRoute.snapshot.paramMap.get('id');
 
-    this.unitOfMeasure = await this._unitOfMeasureService.get(Number(id))
+    this.unitOfMeasure = await this._unitOfMeasureService.get(Number(id));
 
     this.isLoading = false;
   }
@@ -40,7 +40,7 @@ export class EditUnitOfMeasureComponent implements OnInit {
     this.spinnerText = 'Editing unit of measure data...';
     this.isLoading = true;
 
-    await this._unitOfMeasureService.update(this.unitOfMeasure!)
+    await this._unitOfMeasureService.update(this.unitOfMeasure!);
     
     this._router.navigate(['unit-of-measures']);
     this.isLoading = false;

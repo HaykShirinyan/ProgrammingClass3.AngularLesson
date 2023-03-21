@@ -24,7 +24,7 @@ export class CreateUnitOfMeasureComponent {
   public async createUnitOfMeasure(): Promise<void> {
     this.isLoading = true;
 
-    await this._unitOfMeasureService.add(this.unitOfMeasure)
+    await this._unitOfMeasureService.add(this.unitOfMeasure);
     
     this._router.navigate(['unit-of-measures']);
     this.isLoading = false;
