@@ -22,8 +22,15 @@ export class CreateProductComponent {
   }
 
   public async createProduct(): Promise<void> {
-    await this._productService.add(this.product);
-    this._router.navigate(['products']);
+    try {
+      this.isLoading = true;
+
+      await this._productService.add(this.product);
+
+      this._router.navigate(['products']);
+    } finally {
+      this.isLoading = false;
+    }
   }
 
   public cancelLoading(): void {

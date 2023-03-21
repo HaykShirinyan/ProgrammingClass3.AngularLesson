@@ -22,12 +22,15 @@ export class CreateProductTypeComponent {
   }
 
   public async createProductType(): Promise<void> {
-    this.isLoading = true;
+    try {
+      this.isLoading = true;
 
-    await this._productTypeService.add(this.productType);
-    this._router.navigate(['product-types']);
+      await this._productTypeService.add(this.productType);
 
-    this.isLoading = false;
+      this._router.navigate(['product-types']);
+    } finally {
+      this.isLoading = false;
+    }
   }
 
   public cancelLoading(): void {

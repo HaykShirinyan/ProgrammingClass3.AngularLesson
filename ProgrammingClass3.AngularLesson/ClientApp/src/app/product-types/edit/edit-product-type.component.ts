@@ -26,24 +26,29 @@ export class EditProductTypeComponent implements OnInit {
   }
 
   public async ngOnInit(): Promise<void> {
-    this.spinnerText = 'Loading product Type data...';
-    this.isLoading = true;
+    try {
+      this.spinnerText = 'Loading product Type data...';
+      this.isLoading = true;
 
-    let id = this._activatedRoute.snapshot.paramMap.get('id');
+      let id = this._activatedRoute.snapshot.paramMap.get('id');
 
-    this.productType = await this._productTypeService.get(Number(id));
-
-    this.isLoading = false;
+      this.productType = await this._productTypeService.get(Number(id));
+    } finally {
+      this.isLoading = false;
+    }
   }
 
   public async updateProductType(): Promise<void> {
-    this.spinnerText = 'Editing product type data...';
-    this.isLoading = true;
+    try {
+      this.spinnerText = 'Editing product type data...';
+      this.isLoading = true;
 
-    await this._productTypeService.update(this.productType!)
+      await this._productTypeService.update(this.productType!)
 
-    this._router.navigate(['product-types']);
-    this.isLoading = false;
+      this._router.navigate(['product-types']);
+    } finally {
+      this.isLoading = false;
+    }
   }
 
   public cancelLoading(): void {
