@@ -17,39 +17,39 @@ namespace ProgrammingClass3.AngularLesson.Services.Implementations
             _unitOfMeasureRepository = unitOfMeasureRepository;
         }
 
-        public List<UnitOfMeasureDto> GetAll()
+        public async Task<List<UnitOfMeasureDto>> GetAllAsync()
         {
-            var unitOfMeasures = _unitOfMeasureRepository.GetAll();
+            var unitOfMeasures = await _unitOfMeasureRepository.GetAllAsync();
             return _mapper.Map<List<UnitOfMeasureDto>>(unitOfMeasures);
         }
 
-        public UnitOfMeasureDto Get(int id)
+        public async Task<UnitOfMeasureDto> GetAsync(int id)
         {
-            var unitOfMeasure = _unitOfMeasureRepository.Get(id);
+            var unitOfMeasure =await _unitOfMeasureRepository.GetAsync(id);
             return _mapper.Map<UnitOfMeasureDto>(unitOfMeasure);
         }
 
-        public UnitOfMeasureDto Add(UnitOfMeasureDto unitOfMeasureDto)
+        public async Task<UnitOfMeasureDto> AddAsync(UnitOfMeasureDto unitOfMeasureDto)
         {
             var unitOfMeasureModel = _mapper.Map<UnitOfMeasure>(unitOfMeasureDto);
 
-            _unitOfMeasureRepository.Add(unitOfMeasureModel);
+            await _unitOfMeasureRepository.AddAsync(unitOfMeasureModel);
 
             return unitOfMeasureDto;
         }
 
-        public UnitOfMeasureDto Update(UnitOfMeasureDto unitOfMeasureDto)
+        public async Task<UnitOfMeasureDto> UpdateAsync(UnitOfMeasureDto unitOfMeasureDto)
         {
             var unitOfMeasureModel = _mapper.Map<UnitOfMeasure>(unitOfMeasureDto);
 
-            _unitOfMeasureRepository.Update(unitOfMeasureModel);
+            await _unitOfMeasureRepository.UpdateAsync(unitOfMeasureModel);
 
             return unitOfMeasureDto;
         }
 
-        public UnitOfMeasureDto Delete(int id)
+        public async Task<UnitOfMeasureDto> DeleteAsync(int id)
         {
-            var deleted = _unitOfMeasureRepository.Delete(id);
+            var deleted =await _unitOfMeasureRepository.DeleteAsync(id);
             return _mapper.Map<UnitOfMeasureDto>(deleted);
         }
     }

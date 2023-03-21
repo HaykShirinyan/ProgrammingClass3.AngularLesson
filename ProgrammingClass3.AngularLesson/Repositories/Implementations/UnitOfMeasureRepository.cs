@@ -1,4 +1,5 @@
-﻿using ProgrammingClass3.AngularLesson.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using ProgrammingClass3.AngularLesson.Data;
 using ProgrammingClass3.AngularLesson.Models;
 using ProgrammingClass3.AngularLesson.Repositories.Definitions;
 
@@ -13,40 +14,40 @@ namespace ProgrammingClass3.AngularLesson.Repositories.Implementations
             _dbContext = dbContext;
         }
 
-        public List<UnitOfMeasure> GetAll()
+        public async Task<List<UnitOfMeasure>> GetAllAsync()
         {
-            return _dbContext.UnitOfMeasures.ToList();
+            return await _dbContext.UnitOfMeasures.ToListAsync();
         }
 
-        public UnitOfMeasure Get(int id)
+        public async Task<UnitOfMeasure> GetAsync(int id)
         {
-            return _dbContext.UnitOfMeasures.Find(id);
+            return await _dbContext.UnitOfMeasures.FindAsync(id);
         }
 
-        public UnitOfMeasure Add(UnitOfMeasure unitOfMeasure)
+        public async Task<UnitOfMeasure> AddAsync(UnitOfMeasure unitOfMeasure)
         {
             _dbContext.UnitOfMeasures.Add(unitOfMeasure);
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
 
             return unitOfMeasure;
         }
 
-        public UnitOfMeasure Update(UnitOfMeasure unitOfMeasure)
+        public async Task<UnitOfMeasure> UpdateAsync(UnitOfMeasure unitOfMeasure)
         {
             _dbContext.UnitOfMeasures.Update(unitOfMeasure);
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
 
             return unitOfMeasure;
         }
 
-        public UnitOfMeasure Delete(int id)
+        public async Task<UnitOfMeasure> DeleteAsync(int id)
         {
             var unitOfMeasure = _dbContext.UnitOfMeasures.Find(id);
 
             if (unitOfMeasure != null)
             {
                 _dbContext.UnitOfMeasures.Remove(unitOfMeasure);
-                _dbContext.SaveChanges();
+                await _dbContext.SaveChangesAsync();
 
                 return unitOfMeasure;
             }
