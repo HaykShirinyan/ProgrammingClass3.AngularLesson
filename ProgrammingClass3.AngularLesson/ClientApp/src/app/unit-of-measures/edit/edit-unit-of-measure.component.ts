@@ -25,28 +25,25 @@ export class EditUnitOfMeasureComponent implements OnInit {
     this._activatedRoute = activatedRoute;
   }
 
-  public ngOnInit(): void {
+  public async ngOnInit(): Promise<void> {
     this.spinnerText = 'Loading unit of measure data...';
     this.isLoading = true;
 
     let id = this._activatedRoute.snapshot.paramMap.get('id');
 
-    this._unitOfMeasureService.get(Number(id))
-      .subscribe(unitOfMeasure => {
-        this.unitOfMeasure = unitOfMeasure;
-        this.isLoading = false;
-      });
+    this.unitOfMeasure = await this._unitOfMeasureService.get(Number(id))
+
+    this.isLoading = false;
   }
 
-  public updateUnitOfMeasure(): void {
+  public async updateUnitOfMeasure(): Promise<void> {
     this.spinnerText = 'Editing unit of measure data...';
     this.isLoading = true;
 
-    this._unitOfMeasureService.update(this.unitOfMeasure!)
-      .subscribe(() => {
-        this._router.navigate(['unit-of-measures']);
-        this.isLoading = false;
-      });
+    await this._unitOfMeasureService.update(this.unitOfMeasure!)
+    
+    this._router.navigate(['unit-of-measures']);
+    this.isLoading = false;
   }
 
   public cancelLoading(): void {

@@ -16,14 +16,12 @@ export class UnitOfMeasureListComponent implements OnInit {
     this._unitOfMeasureService = unitOfMeasureService;
   }
 
-  public ngOnInit(): void {
+  public async ngOnInit(): Promise<void> {
     this.isLoading = true;
 
-    this._unitOfMeasureService.getAll()
-      .subscribe(unitOfMeasures => {
-        this.unitOfMeasures = unitOfMeasures;
-        this.isLoading = false;
-      })
+    this.unitOfMeasures = await this._unitOfMeasureService.getAll();
+
+    this.isLoading = false;
   }
 
   public cancelLoading(): void {

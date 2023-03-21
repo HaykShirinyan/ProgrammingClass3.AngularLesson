@@ -21,14 +21,13 @@ export class CreateUnitOfMeasureComponent {
     this._router = router;
   }
 
-  public createUnitOfMeasure(): void {
+  public async createUnitOfMeasure(): Promise<void> {
     this.isLoading = true;
 
-    this._unitOfMeasureService.add(this.unitOfMeasure)
-      .subscribe(() => {
-        this._router.navigate(['unit-of-measures']);
-        this.isLoading = false;
-      });
+    await this._unitOfMeasureService.add(this.unitOfMeasure)
+    
+    this._router.navigate(['unit-of-measures']);
+    this.isLoading = false;
   }
 
   public cancelLoading(): void {
