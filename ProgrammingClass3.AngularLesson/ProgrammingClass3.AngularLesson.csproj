@@ -38,6 +38,7 @@
   <ItemGroup>
     <None Remove="ClientApp\src\app\app-routing.module.ts" />
     <None Remove="ClientApp\src\app\product-types\create\create-product-type.component.ts" />
+    <None Remove="ClientApp\src\app\product-types\delete\delete-product-type.component.ts" />
     <None Remove="ClientApp\src\app\product-types\edit\edit-product-type.component.ts" />
     <None Remove="ClientApp\src\app\products\create\create-product.component.ts" />
     <None Remove="ClientApp\src\app\products\edit\edit-product.component.ts" />

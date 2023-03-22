@@ -5,6 +5,7 @@ import { CounterComponent } from "./counter/counter.component";
 import { FetchDataComponent } from "./fetch-data/fetch-data.component";
 import { HomeComponent } from "./home/home.component";
 import { CreateProductTypeComponent } from "./product-types/create/create-product-type.component";
+import { DeleteProductTypeComponent } from "./product-types/delete/delete-product-type.component";
 import { EditProductTypeComponent } from "./product-types/edit/edit-product-type.component";
 import { ProductTypeListComponent } from "./product-types/list/product-type-list.component";
 import { CreateProductComponent } from "./products/create/create-product.component";
@@ -27,7 +28,8 @@ const routes: Routes = [
   { path: 'product-types/edit/:id', component: EditProductTypeComponent },
   { path: 'unit-of-measures', component: UnitOfMeasureListComponent },
   { path: 'unit-of-measures/create', component: CreateUnitOfMeasureComponent },
-  { path: 'unit-of-measures/edit/:id', component: EditUnitOfMeasureComponent }
+  { path: 'unit-of-measures/edit/:id', component: EditUnitOfMeasureComponent },
+  { path: 'product-types/delete/:id', component: DeleteProductTypeComponent }
 ];
 
 @NgModule({

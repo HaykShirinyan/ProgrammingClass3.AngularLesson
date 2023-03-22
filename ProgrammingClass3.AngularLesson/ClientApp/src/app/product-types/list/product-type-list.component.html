@@ -11,15 +11,21 @@
   <table class="table">
     <thead>
       <tr>
+        <th></th>
         <th>Id</th>
         <th>Name</th>
         <th>Description</th>
-        <th>Actions</th>
+        <th>Actions1</th>
       </tr>
     </thead>
 
     <tbody>
       <tr *ngFor="let productType of productTypes">
+        <td>
+          <a class="btn btn-danger" [routerLink]="['delete', productType.id]">
+            Delete
+          </a>
+        </td>
         <td>
           {{productType.id}}
         </td>
