@@ -26,15 +26,19 @@
   </div>
 
   <div class="mb-3">
-    <h3 class="text-danger">You really want to delete this product type?</h3>
+    <h3 class="text-danger text-center">You really want to delete this product type?</h3>
   </div>
 
-  <div>
-    <button type="submit" class="btn btn-primary" style="margin-right:18px">
-      Yes
-    </button>
-    <a class="btn btn-secondary">
-      No
-    </a>
+  <div style=" display: flex;
+       flex-direction: row;
+       flex-wrap: nowrap;
+       align-content: center;
+       justify-content: center;">
+      <button type="submit" class="btn btn-primary" style="margin-right:18px">
+        Yes
+      </button>
+      <app-back-button buttonText="No"
+                       backRouterLink="/product-types">
+      </app-back-button>
   </div>
 </form>
