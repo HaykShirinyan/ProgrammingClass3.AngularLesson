@@ -34,7 +34,7 @@ export class ProductTypeService {
   }
 
   public delete(productType: ProductType): Promise<ProductType> {
-    const observable = this._http.delete<ProductType>('api/product-types' + productType.id);
+    const observable = this._http.delete<ProductType>('api/product-types/' + productType.id);
     return lastValueFrom(observable);
   }
 }
