@@ -32,6 +32,11 @@ export class UnitOfMeasureService{
     const observable = this._http.put<UnitOfMeasure>('api/unit-of-measures/' + unitOfMeasure.id, unitOfMeasure);
     return lastValueFrom(observable);
   }
+
+  public delete(unitOfMeasure: UnitOfMeasure): Promise<UnitOfMeasure> {
+    const observable = this._http.delete<UnitOfMeasure>('api/unit-of-measures/' + unitOfMeasure.id);
+    return lastValueFrom(observable);
+  }
 }
 
 

@@ -1,0 +1,44 @@
+<app-loading-spinner [spinnerText]="spinnerText"
+                     [isVisible]="isLoading"
+                     (cancel)="cancelLoading()">
+</app-loading-spinner>
+
+<form *ngIf="unitOfMeasure" (ngSubmit)="deleteUnitOfMeasure()">
+  <div class="mb-3">
+    <label for="unitOfMeasure-name" class="form-label">
+      Name
+    </label>
+    <input id="unitOfMeasure-name"
+           name="name"
+           class="form-control"
+           [(ngModel)]="unitOfMeasure.name" />
+  </div>
+
+  <div class="mb-3">
+    <label for="unitOfMeasure-description" class="form-label">
+      Description
+    </label>
+    <textarea id="unitOfMeasure-description"
+              name="description"
+              class="form-control"
+              [(ngModel)]="unitOfMeasure.description">
+    </textarea>
+  </div>
+
+  <div class="mb-3">
+    <h3 class="text-danger text-center">You really want to delete this measurin of units ?</h3>
+  </div>
+
+  <div style=" display: flex;
+       flex-direction: row;
+       flex-wrap: nowrap;
+       align-content: center;
+       justify-content: center;">
+    <button type="submit" class="btn btn-primary" style="margin-right:18px">
+      Yes
+    </button>
+    <app-back-button buttonText="No"
+                     backRouterLink="/product-types">
+    </app-back-button>
+  </div>
+</form>
