@@ -40,7 +40,7 @@ export class DeleteProductTypeComponent implements OnInit {
 
   public async deleteProductType(): Promise<void> {
     try {
-      this.spinnerText = 'Deleting producttype'
+      this.spinnerText = 'Deleting product type';
       this.isLoading = true;
 
       await this._productTypeService.delete(this.productType!);
