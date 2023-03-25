@@ -12,9 +12,9 @@ namespace ProgrammingClass3.AngularLesson.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        private IProductService _productService;
+        private IproductService _productService;
 
-        public ProductsController(IProductService productService)
+        public ProductsController(IproductService productService)
         {
             _productService = productService;
         }

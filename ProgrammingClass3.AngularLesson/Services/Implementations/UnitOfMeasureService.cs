@@ -29,7 +29,7 @@ namespace ProgrammingClass3.AngularLesson.Services.Implementations
             return _mapper.Map<UnitOfMeasureDto>(unitofmeasure);
         }
 
-        public UnitOgMeasureDto Add(UnitOfMeasureDto unitOfMeasureDto)
+        public UnitOfMeasureDto Add(UnitOfMeasureDto unitOfMeasureDto)
         {
             var unitOfMeasureModel = _mapper.Map<UnitOfMeasure>(unitOfMeasureDto);
 

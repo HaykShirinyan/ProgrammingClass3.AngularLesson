@@ -1,12 +1,13 @@
 using AutoMapper;
 using ProgrammingClass3.AngularLesson.DataTransferObjects;
+using ProgrammingClass3.AngularLesson.DataTransferOgjects;
 using ProgrammingClass3.AngularLesson.Models;
 using ProgrammingClass3.AngularLesson.Repositories.Definitions;
 using ProgrammingClass3.AngularLesson.Services.Definitions;
 
 namespace ProgrammingClass3.AngularLesson.Services.Implementations
 {
-    public class ProductService : IProductService
+    public class ProductService : IproductService
     {
         private readonly IMapper _mapper;
         private readonly IProductRepository _productRepository;
