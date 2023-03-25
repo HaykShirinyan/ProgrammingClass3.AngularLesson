@@ -12,17 +12,17 @@ namespace ProgrammingClass3.AngularLesson.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        private IProductRepository _productRepository;
+        private IProductService _productService;
 
-        public ProductsController(IProductRepository productRepository)
+        public ProductsController(IProductService productService)
         {
-            _productRepository = productRepository;
+            _productService = productService;
         }
 
         [HttpGet]
         public IActionResult GetAllProducts()
         {
-            var products = _productRepository.GetAll();
+            var products = _productService.GetAll();
 
             return Ok(products);
         }
@@ -30,7 +30,7 @@ namespace ProgrammingClass3.AngularLesson.Controllers
         [HttpGet("{id}")]
         public IActionResult GetProduct(int id)
         {
-            var product= _productRepository.Get(id);
+            var product= _productService.Get(id);
 
             if (product == null)
             {
@@ -43,7 +43,7 @@ namespace ProgrammingClass3.AngularLesson.Controllers
         [HttpPost]
         public IActionResult AddProduct(Product product)
         {
-            _productRepository.Add(product);
+            _productService.Add(product);
             
             return Ok(product);
         }
@@ -56,7 +56,7 @@ namespace ProgrammingClass3.AngularLesson.Controllers
                 return BadRequest("ID in the request body must be equal to ID in the URL.");
             }
 
-           _productRepository.Update(product);
+           _productService.Update(product);
 
             return Ok(product);
         }
@@ -64,7 +64,7 @@ namespace ProgrammingClass3.AngularLesson.Controllers
         [HttpDelete("{id}")]
         public IActionResult DeleteProduct(int id)
         {
-            var deletedproduct = _productRepository.Delete(id);
+            var deletedproduct = _productService.Delete(id);
 
             if (deletedproduct != null)
             {

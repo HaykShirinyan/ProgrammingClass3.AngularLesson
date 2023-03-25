@@ -7,10 +7,10 @@ namespace ProgrammingClass3.AngularLesson.DataTransferOgjects
         public int Id { get; set; }
 
         [Required]
-        [StringLenght(100)]
+        [StringLength(100)]
         public string Name { get; set; }
 
-        [StringLenght(500)]
+        [StringLength(500)]
         public string Description { get; set; }
 
         public int Quantity { get; set; }

@@ -11,7 +11,7 @@ namespace ProgrammingClass3.AngularLesson.Services.Implementations
         private readonly IMapper _mapper;
         private readonly IUnitOfMeasureRepository _unitOfMeasureRepository;
         
-        public UnitOfMeasureService(IMapper mapper, IUnitPfMeasureRepository unitPfMeasureRepository)
+        public UnitOfMeasureService(IMapper mapper, IUnitOfMeasureRepository unitPfMeasureRepository)
         {
             _mapper = mapper;
             _unitOfMeasureRepository = unitPfMeasureRepository;
