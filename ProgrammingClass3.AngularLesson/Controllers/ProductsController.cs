@@ -20,16 +20,16 @@ namespace ProgrammingClass3.AngularLesson.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAllProducts()
+        public async Task<IActionResult> GetAllProductsAsync()
         {
-            var products = _productService.GetAll();
+            var products = await _productService.GetAllAsync();
             return Ok(products);
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetProduct(int id)
+        public async Task<IActionResult> GetProductAsync(int id)
         {
-            var product = _productService.Get(id);
+            var product = await _productService.GetAsync(id);
 
             if (product == null)
             {
@@ -40,30 +40,30 @@ namespace ProgrammingClass3.AngularLesson.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddProduct(ProductDto product)
+        public async Task<IActionResult> AddProductAsync(ProductDto product)
         {
-           _productService.Add(product);
+           await _productService.AddAsync(product);
 
             return Ok(product);
         }
 
         [HttpPut("{id}")]
-        public IActionResult UpdateProduct(int id, ProductDto product)
+        public async Task<IActionResult> UpdateProductAsync(int id, ProductDto product)
         {
             if (id != product.Id)
             {
                 return BadRequest("ID in the request body must be equal to ID in the URL.");
             }
 
-            _productService.Update(product);
+            await _productService.UpdateAsync(product);
 
             return Ok(product);
         }
 
         [HttpDelete("{id}")]
-        public IActionResult DeleteProduct(int id)
+        public async Task<IActionResult> DeleteProductAsync(int id)
         {
-            var deletedProduct = _productService.Delete(id);
+            var deletedProduct = await _productService.DeleteAsync(id);
 
             if (deletedProduct != null)
             {

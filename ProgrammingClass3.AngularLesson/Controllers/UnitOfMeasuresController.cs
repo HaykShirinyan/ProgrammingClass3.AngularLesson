@@ -20,17 +20,17 @@ namespace ProgrammingClass3.AngularLesson.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAllUnitOfMeasures()
+        public async Task<IActionResult> GetAllUnitOfMeasuresAsync()
         {
-            var unitOfMeasures = _unitOfMeasureService.GetAll();
+            var unitOfMeasures = await _unitOfMeasureService.GetAllAsync();
 
             return Ok(unitOfMeasures);
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetUnitOfMeasure(int id)
+        public async Task<IActionResult> GetUnitOfMeasureAsync(int id)
         {
-            var unitOfMeasure = _unitOfMeasureService.Get(id);
+            var unitOfMeasure = await _unitOfMeasureService.GetAsync(id);
 
             if (unitOfMeasure == null)
             {
@@ -41,30 +41,30 @@ namespace ProgrammingClass3.AngularLesson.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddUnitOfMeasure(UnitOfMeasureDto unitOfMeasure)
+        public async Task<IActionResult> AddUnitOfMeasureAsync(UnitOfMeasureDto unitOfMeasure)
         {
-            _unitOfMeasureService.Add(unitOfMeasure);
+            await _unitOfMeasureService.AddAsync(unitOfMeasure);
 
             return Ok(unitOfMeasure);
         }
 
         [HttpPut("{id}")]
-        public IActionResult UpdateUnitOfMeasure(int id, UnitOfMeasureDto unitOfMeasure)
+        public async Task<IActionResult> UpdateUnitOfMeasureAsync(int id, UnitOfMeasureDto unitOfMeasure)
         {
             if (id != unitOfMeasure.Id)
             {
                 return BadRequest("ID in the request body must be equal to ID in the URL.");
             }
 
-            _unitOfMeasureService.Update(unitOfMeasure);
+            await _unitOfMeasureService.UpdateAsync(unitOfMeasure);
 
             return Ok(unitOfMeasure);
         }
 
         [HttpDelete("{id}")]
-        public IActionResult DeleteUnitOfMeasure(int id)
+        public async Task<IActionResult> DeleteUnitOfMeasureAsync(int id)
         {
-            var unitOfMeasure = _unitOfMeasureService.Delete(id);
+            var unitOfMeasure = await _unitOfMeasureService.DeleteAsync(id);
 
             if (unitOfMeasure != null)
             {

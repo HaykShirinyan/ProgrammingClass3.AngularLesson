@@ -14,22 +14,22 @@ namespace ProgrammingClass3.AngularLesson.Repositories.Implementations
             _dbContext = dbContext;
         }
 
-        public ProductType Add(ProductType productType)
+        public async Task<ProductType> AddAsync(ProductType productType)
         {
             _dbContext.ProductTypes.Add(productType);
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
 
             return productType;
         }
 
-        public ProductType Delete(int id)
+        public async Task<ProductType> DeleteAsync(int id)
         {
             var productType = _dbContext.ProductTypes.Find(id);
 
             if (productType != null)
             {
                 _dbContext.ProductTypes.Remove(productType);
-                _dbContext.SaveChanges();
+                await _dbContext.SaveChangesAsync();
 
                 return productType;
             }
@@ -37,20 +37,20 @@ namespace ProgrammingClass3.AngularLesson.Repositories.Implementations
             return null;
         }
 
-        public ProductType Get(int id)
+        public async Task<ProductType> GetAsync(int id)
         {
-            return _dbContext.ProductTypes.Find(id);
+            return await _dbContext.ProductTypes.FindAsync(id);
         }
 
-        public List<ProductType> GetAll()
+        public async Task<List<ProductType>> GetAllAsync()
         {
-            return _dbContext.ProductTypes.ToList();
+            return await _dbContext.ProductTypes.ToListAsync();
         }
 
-        public ProductType Update(ProductType productType)
+        public async Task<ProductType> UpdateAsync(ProductType productType)
         {
             _dbContext.ProductTypes.Update(productType);
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
 
             return productType;
         }

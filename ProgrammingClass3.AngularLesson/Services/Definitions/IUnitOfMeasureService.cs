@@ -4,14 +4,14 @@ namespace ProgrammingClass3.AngularLesson.Services.Definitions
 {
     public interface IUnitOfMeasureService
     {
-        List<UnitOfMeasureDto> GetAll();
+        Task<List<UnitOfMeasureDto>> GetAllAsync();
 
-        UnitOfMeasureDto Get(int id);
+        Task<UnitOfMeasureDto> GetAsync(int id);
 
-        UnitOfMeasureDto Add(UnitOfMeasureDto unitOfMeasureDto);
+        Task<UnitOfMeasureDto> AddAsync(UnitOfMeasureDto unitOfMeasureDto);
 
-        UnitOfMeasureDto Update(UnitOfMeasureDto unitOfMeasureDto);
+        Task<UnitOfMeasureDto> UpdateAsync(UnitOfMeasureDto unitOfMeasureDto);
 
-        UnitOfMeasureDto Delete(int id);
+        Task<UnitOfMeasureDto> DeleteAsync(int id);
     }
 }

@@ -26,14 +26,17 @@
 
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Compile Remove="ClientApp\src\app\loading-spinner\**" />
     <Content Remove="$(SpaRoot)**" />
+    <Content Remove="ClientApp\src\app\loading-spinner\**" />
+    <EmbeddedResource Remove="ClientApp\src\app\loading-spinner\**" />
     <None Remove="$(SpaRoot)**" />
+    <None Remove="ClientApp\src\app\loading-spinner\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="ClientApp\src\app\app-routing.module.ts" />
-    <None Remove="ClientApp\src\app\loading-spinner\loading-spinner.component.ts" />
     <None Remove="ClientApp\src\app\products\list\product-list.component.ts" />
     <None Remove="ClientApp\src\app\shared\models\product.ts" />
     <None Remove="ClientApp\src\app\shared\services\product-type.service.ts" />
@@ -43,7 +46,6 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\app-routing.module.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\loading-spinner\loading-spinner.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\products\list\product-list.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\models\product.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\shared\services\product-type.service.ts" />

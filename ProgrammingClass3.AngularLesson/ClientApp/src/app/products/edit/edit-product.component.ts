@@ -11,7 +11,7 @@ export class EditProductComponent implements OnInit {
   private readonly _router: Router;
   private readonly _activatedRoute: ActivatedRoute;
 
-  public product?: Product;
+  public product: Product;
 
   constructor(
     productService: ProductService,
@@ -23,19 +23,14 @@ export class EditProductComponent implements OnInit {
     this._activatedRoute = activatedRoute
   }
 
-  public ngOnInit(): void {
+  public async ngOnInit(): Promise<void> {
     let id = this._activatedRoute.snapshot.paramMap.get('id');
 
-    this._productService.get(Number(id))
-      .subscribe(product => {
-        this.product = product;
-      });
+    this.product = await this._productService.get(Number(id));
   }
 
-  public updateProduct(): void {
-    this._productService.update(this.product!)
-      .subscribe(() => {
-        this._router.navigate(['products']);
-      });
+  public async updateProduct(): Promise<void> {
+    await this._productService.update(this.product);
+    this._router.navigate(['products']);
   }
 }

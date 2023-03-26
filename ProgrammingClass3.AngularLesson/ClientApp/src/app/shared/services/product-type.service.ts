@@ -1,7 +1,11 @@
 import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
+import { Injectable } from "@angular/core";
+import { lastValueFrom, observable, Observable } from "rxjs";
 import { ProductType } from "../models/product-type";
 
+@Injectable({
+  providedIn: 'root'
+})
 export class ProductTypeService {
   private _http: HttpClient;
 
@@ -9,19 +13,23 @@ export class ProductTypeService {
     this._http = http;
   }
 
-  public getAll(): Observable<ProductType[]> {
-    return this._http.get<ProductType[]>('api/product-types');
+  public getAll(): Promise<ProductType[]> {
+    const observable = this._http.get<ProductType[]>('api/product-types');
+    return lastValueFrom(observable);
   }
 
-  public get(id: number): Observable<ProductType> {
-    return this._http.get<ProductType>('api/product-types/' + id);
+  public get(id: number): Promise<ProductType> {
+    const observable = this._http.get<ProductType>('api/product-types/' + id);
+    return lastValueFrom(observable);
   }
 
-  public add(productType: ProductType): Observable<ProductType> {
-    return this._http.post<ProductType>('api/product-types/', productType);
+  public add(productType: ProductType): Promise<ProductType> {
+    const observable = this._http.post<ProductType>('api/product-types/', productType);
+    return lastValueFrom(observable);
   }
 
-  public update(productType: ProductType): Observable<ProductType> {
-    return this._http.put<ProductType>('api/product-types' + productType.id, productType);
+  public update(productType: ProductType): Promise<ProductType> {
+    const observable = this._http.put<ProductType>('api/product-types' + productType.id, productType);
+    return lastValueFrom(observable);
   }
 }

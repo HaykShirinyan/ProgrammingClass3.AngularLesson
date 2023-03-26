@@ -20,10 +20,8 @@ export class CreateUnitOfMeasureComponent {
     this._router = router;
   }
 
-  public createUnitOfMeasure(): void {
-    this._unitOfMeasureService.add(this.unitOfMeasure)
-      .subscribe(() => {
-        this._router.navigate(['unit-of-measures'])
-      });
+  public async createUnitOfMeasure(): Promise<void> {
+    await this._unitOfMeasureService.add(this.unitOfMeasure);
+    this._router.navigate(['unit-of-measures'])
   }
 }

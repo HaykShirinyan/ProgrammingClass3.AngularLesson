@@ -22,19 +22,14 @@ export class EditProductType implements OnInit {
     this._activatedRoute = activatedRoute
   }
 
-  public ngOnInit(): void {
+  public async ngOnInit(): Promise<void> {
     let id = this._activatedRoute.snapshot.paramMap.get('id');
 
-    this._productTypeService.get(Number(id))
-      .subscribe(productType => {
-        this.productType = this.productType;
-      });
+    this.productType = await this._productTypeService.get(Number(id));
   }
 
-  public editProductType(): void {
-    this._productTypeService.update(this.productType)
-      .subscribe(() => {
-        this._router.navigate(['product-types'])
-      })
+  public async editProductType(): Promise<void> {
+    await this._productTypeService.update(this.productType);
+    this._router.navigate(['product-types'])
   }
 }

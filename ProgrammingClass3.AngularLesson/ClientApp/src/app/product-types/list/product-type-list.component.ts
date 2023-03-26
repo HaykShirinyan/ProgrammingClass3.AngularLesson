@@ -16,14 +16,16 @@ export class ProductTypeComponent implements OnInit {
     this._productTypeService = productTypeService;
   }
 
-  public ngOnInit(): void {
-    this.isLoading = true;
+  public async ngOnInit(): Promise<void> {
+    try {
+      this.isLoading = true;
 
-    this._productTypeService.getAll()
-      .subscribe(productTypes => {
-        this.productTypes = productTypes;
-        this.isLoading = false;
-      });
+      this.productTypes = await this._productTypeService.getAll();
+
+      this.isLoading = false;
+    } finally {
+      this.isLoading = false;
+    }
   }
 
   public cancelLoading(): void {

@@ -18,41 +18,41 @@ namespace ProgrammingClass3.AngularLesson.Services.Implementations
             _repository = repository;
         }
 
-        public ProductTypeDto Add(ProductTypeDto productTypeDto)
+        public async Task<ProductTypeDto> AddAsync(ProductTypeDto productTypeDto)
         {
             var productTypeModel = _mapper.Map<ProductType>(productTypeDto);
 
-            _repository.Add(productTypeModel);
+            await _repository.AddAsync(productTypeModel);
 
             return productTypeDto;
         }
 
-        public ProductTypeDto Delete(int id)
+        public async Task<ProductTypeDto> DeleteAsync(int id)
         {
-            var deleted = _repository.Delete(id);
+            var deleted = await _repository.DeleteAsync(id);
 
             return _mapper.Map<ProductTypeDto>(deleted);
         }
 
-        public ProductTypeDto Get(int id)
+        public async Task<ProductTypeDto> GetAsync(int id)
         {
-            var productType = _repository.Get(id);
+            var productType = await _repository.GetAsync(id);
 
             return _mapper.Map<ProductTypeDto>(productType);
         }
 
-        public List<ProductTypeDto> GetAll()
+        public async Task<List<ProductTypeDto>> GetAllAsync()
         {
-            var productTypes = _repository.GetAll();
+            var productTypes = await _repository.GetAllAsync();
 
             return _mapper.Map<List<ProductTypeDto>>(productTypes);
         }
 
-        public ProductTypeDto Update(ProductTypeDto productTypeDto)
+        public async Task<ProductTypeDto> UpdateAsync(ProductTypeDto productTypeDto)
         {
             var productTypeModel = _mapper.Map<ProductType>(productTypeDto);
 
-            _repository.Update(productTypeModel);
+            await _repository.UpdateAsync(productTypeModel);
 
             return productTypeDto;
         }
