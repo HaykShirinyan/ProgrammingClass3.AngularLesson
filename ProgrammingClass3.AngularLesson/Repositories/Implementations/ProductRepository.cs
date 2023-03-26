@@ -1,4 +1,5 @@
-﻿using ProgrammingClass3.AngularLesson.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using ProgrammingClass3.AngularLesson.Data;
 using ProgrammingClass3.AngularLesson.Models;
 using ProgrammingClass3.AngularLesson.Repositories.Definitions;
 
@@ -13,40 +14,40 @@ namespace ProgrammingClass3.AngularLesson.Repositories.Implementations
             _dbContext = dbContext;
         }   
 
-        public List<Product> GetAll()
+        public async Task<List<Product>> GetAllAsync()
         {
-            return _dbContext.Products.ToList();
+            return await _dbContext.Products.ToListAsync();
         }
 
-        public Product Get(int id)
+        public async Task<Product> GetAsync(int id)
         {
-            return _dbContext.Products.Find(id);
+            return await _dbContext.Products.FindAsync(id);
         }
 
-        public Product Add(Product product)
+        public async Task<Product> AddAsync(Product product)
         {
             _dbContext.Products.Add(product);
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
 
             return product;
         }
 
-        public Product Update(Product product)
+        public async Task<Product> UpdateAsync(Product product)
         {
             _dbContext.Products.Update(product);
-            _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
 
             return product;
         }
 
-        public Product Delete(int id)
+        public async Task<Product> DeleteAsync(int id)
         {
-            var product = _dbContext.Products.Find(id);
+            var product = await _dbContext.Products.FindAsync(id);
 
             if (product != null)
             {
                 _dbContext.Products.Remove(product);
-                _dbContext.SaveChanges();
+                await _dbContext.SaveChangesAsync();
 
                 return product;
             }

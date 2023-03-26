@@ -15,14 +15,13 @@ export class ProductListComponent implements OnInit {
     this._productService = productService;
   }
 
-  public ngOnInit(): void {
-    this.isLoading = true;
-
-    this._productService.getAll()
-      .subscribe(products => {
-        this.products = products;
-        this.isLoading = false;
-      })
+  public async ngOnInit(): Promise<void> {
+    try {
+      this.isLoading = true;
+      this.products = await this._productService.getAll();
+    } finally {
+      this.isLoading = false
+    } 
   }
 
   public cancelLoading(): void {
