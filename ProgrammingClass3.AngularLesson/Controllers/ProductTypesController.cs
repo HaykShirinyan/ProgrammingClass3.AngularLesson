@@ -19,17 +19,16 @@ namespace ProgrammingClass3.AngularLesson.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAllProductTypes()
+         public async Task<IActionResult> GetAllProductTypeAsync()
         {
-            var productTypes = _productTypeService.GetAll();
-
+            var productTypes = await _productTypeService.GetAllAsync();
             return Ok(productTypes);
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetProductType(int id)
+        public async Task<IActionResult> GetProductTypeAsync(int id)
         {
-            var productType = _productTypeService.Get(id);
+            var productType = await _productTypeService.GetAsync(id);
 
             if (productType == null)
             {
@@ -40,30 +39,30 @@ namespace ProgrammingClass3.AngularLesson.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddProductType(ProductTypeDto productType)
+        public async Task<IActionResult> AddProductTypeAsync(ProductTypeDto productType)
         {
-            _productTypeService.Add(productType);
+            await _productTypeService.AddAsync(productType);
 
             return Ok(productType);
         }
 
         [HttpPut("{id}")]
-        public IActionResult UpdateProductType(int id, ProductTypeDto productType)
+        public async Task<IActionResult> UpdateProductTypeAsync(int id, ProductTypeDto productType)
         {
             if (id != productType.Id)
             {
                 return BadRequest("ID in the request body must be equal to ID in the URL.");
             }
 
-            _productTypeService.Update(productType);
+            await _productTypeService.UpdateAsync(productType);
 
             return Ok(productType);
         }
 
         [HttpDelete("{id}")]
-        public IActionResult DeleteProductType(int id)
+        public async Task<IActionResult> DeleteProductTypeAsync(int id)
         {
-            var deletedProductType = _productTypeService.Delete(id);
+            var deletedProductType = await _productTypeService.DeleteAsync(id);
 
             if (deletedProductType != null)
             {

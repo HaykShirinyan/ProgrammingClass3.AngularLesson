@@ -4,12 +4,14 @@ namespace ProgrammingClass3.AngularLesson.Repositories.Definitions
 {
     public interface IProductTypeRepository
     {
-        List<ProductType> GetAll();
+        Task<List<ProductType>> GetAllAsync();
 
-        ProductType Get(int id);
-        ProductType Add(ProductType productType);
-        ProductType Update(ProductType productType);
+        Task<ProductType> GetAsync(int id);
 
-        ProductType Delete(int id);
+        Task<ProductType> AddAsync(ProductType productType);
+
+        Task<ProductType> UpdateAsync(ProductType productType);
+
+        Task<ProductType> DeleteAsync(int id);
     }
 }

@@ -20,10 +20,8 @@ export class CreateProductTypeComponent {
     this._router = router;
   }
 
-  public createProductType(): void {
-    this._productTypeService.add(this.producttype)
-      .subscribe(() => {
-        this._router.navigate(['product-types']);
-      });
+  public async createProductType(): Promise<void> {
+    await this._productTypeService.add(this.producttype);
+    this._router.navigate(['product-types']);
   }
 }

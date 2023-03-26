@@ -23,19 +23,14 @@ export class EditUnitOfMeasureComponent implements OnInit {
     this._activatedRoute = activatedRoute
   }
 
-  public ngOnInit(): void {
+  public async ngOnInit(): Promise<void> {
     let id = this._activatedRoute.snapshot.paramMap.get('id');
 
-    this._unitOfMeasureService.get(Number(id))
-      .subscribe(unitofmeasure => {
-        this.unitofmeasure = unitofmeasure;
-      });
+    this.unitofmeasure = await this._unitOfMeasureService.get(Number(id));
   }
 
-  public updateUnitOfMeasure(): void {
-    this._unitOfMeasureService.update(this.unitofmeasure!)
-      .subscribe(() => {
-        this._router.navigate(['unitofmeasures']);
-      });
+  public async updateUnitOfMeasure(): Promise<void> {
+    await this._unitOfMeasureService.update(this.unitofmeasure!);
+    this._router.navigate(['unitofmeasures']);
   }
 }

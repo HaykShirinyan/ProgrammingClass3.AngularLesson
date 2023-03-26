@@ -4,14 +4,14 @@ namespace ProgrammingClass3.AngularLesson.Repositories.Definitions
 {
     public interface IUnitOfMeasureRepository
     {
-        List<UnitOfMeasure> GetAll();
+        Task<List<UnitOfMeasure>> GetAllAsync();
 
-        UnitOfMeasure Get(int id);
+        Task<UnitOfMeasure> GetAsync(int id);
 
-        UnitOfMeasure Add(UnitOfMeasure unitOfMeasure);
+        Task<UnitOfMeasure> AddAsync(UnitOfMeasure unitOfMeasure);
 
-        UnitOfMeasure Update(UnitOfMeasure unitOfMeasure);
+        Task<UnitOfMeasure> UpdateAsync(UnitOfMeasure unitOfMeasure);
 
-        UnitOfMeasure Delete(int id);
+        Task<UnitOfMeasure> DeleteAsync(int id);
     }
 }
