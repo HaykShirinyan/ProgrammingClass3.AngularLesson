@@ -22,6 +22,6 @@ export class CreateProductTypeComponent {
 
   public async createProductType(): Promise<void> {
     await this._productTypeService.add(this.producttype);
-    this._router.navigate(['product-types']);
+    this._router.navigate(['producttypes']);
   }
 }

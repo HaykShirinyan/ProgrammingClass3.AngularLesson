@@ -1,0 +1,40 @@
+<app-loading-spinner [spinnerText]="spinnerText"
+                     [isVisible]="isLoading"
+                     (cancel)="cancelLoading()">
+</app-loading-spinner>
+
+<form *ngIf="product" (ngSubmit)="deleteProduct()">
+  <div class="mb-3">
+    <label for="product-name" class="form-label">
+      Name
+    </label>
+    <input id="product-name"
+           name="name"
+           class="form-control"
+           [(ngModel)]="product.name" />
+  </div>
+
+  <div class="mb-3">
+    <label for="product-description" class="form-label">
+      Description
+    </label>
+    <textarea id="product-description"
+              name="description"
+              class="form-control"
+              [(ngModel)]="product.description">
+    </textarea>
+  </div>
+
+  <div class="mb-3">
+    <h5>Do you want to delete?</h5>
+  </div>
+
+  <div>
+    <button type="submit" class="btn btn-danger">
+      Delete
+    </button>
+    <app-back-button buttonText="No"
+                     backRouterLink="/products">
+    </app-back-button>
+  </div>
+</form>

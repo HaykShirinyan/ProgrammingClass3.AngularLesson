@@ -13,6 +13,8 @@ import { UnitOfMeasureListComponent } from "./unit-of-measures/list/unit-of-meas
 import { EditProductTypeComponent } from "./product-types/edit/edit-product-type.component";
 import { CreateUnitOfMeasureComponent } from "./unit-of-measures/create/create-unit-of-measure.component";
 import { EditUnitOfMeasureComponent } from "./unit-of-measures/edit/edit-unit-of-measure.component";
+import { DeleteProductComponent } from "./products/delete/delete-product.component";
+import { DeleteProductTypeComponent } from "./product-types/delete/delete-product-type.component";
 
 
 const routes: Routes = [
@@ -28,6 +30,8 @@ const routes: Routes = [
   { path: 'producttypes/edit/:id', component: EditProductTypeComponent },
   { path: 'unitofmeasures/create', component: CreateUnitOfMeasureComponent },
   { path: 'unitofmeasures/edit/:id', component: EditUnitOfMeasureComponent },
+  { path: 'products/delete/:id', component: DeleteProductComponent },
+  { path: 'producttypes/delete/:id', component: DeleteProductTypeComponent },
 ];
 
 @NgModule({

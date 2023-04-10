@@ -64,7 +64,7 @@ namespace ProgrammingClass3.AngularLesson.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUnitOfMeasureAsync(int id)
         {
-            var deletedUnitOfMeasure = await _unitOfMeasureService=.DeleteAsync(id);
+            var deletedUnitOfMeasure = await _unitOfMeasureService.DeleteAsync(id);
 
             if (deletedUnitOfMeasure != null)
             {
